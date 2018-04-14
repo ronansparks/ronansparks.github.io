@@ -246,7 +246,7 @@
 
     
         <meta property="article:published_time" content="Fri Apr 13 2018 21:06:24 GMT+0800">
-        <meta property="article:modified_time" content="Sat Apr 14 2018 15:50:14 GMT+0800">
+        <meta property="article:modified_time" content="Sat Apr 14 2018 16:02:31 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -269,7 +269,7 @@
     "mainEntityOfPage": "ronansparks.github.io/2018/04/13/iOS多线程的介绍与演示/index.html",
     "headline": "iOS多线程的介绍与演示",
     "datePublished": "Fri Apr 13 2018 21:06:24 GMT+0800",
-    "dateModified": "Sat Apr 14 2018 15:50:14 GMT+0800",
+    "dateModified": "Sat Apr 14 2018 16:02:31 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Ronan",
@@ -507,11 +507,12 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p><em>环境： Swift 4.1  Xcode 9.3</em></p>
-<p>本篇文章会简单介绍线程的概念，以及如何区分。接着开始讲解iOS开发中提到的4种方式，不要紧张，最常用的就2种。最后稍微带过下线程安全方面的知识。</p>
+        <p>本篇文章会简单介绍线程的概念，以及如何区分。接着开始讲解iOS开发中提到的4种方式，不要紧张，最常用的就2种。最后稍微带过下线程安全方面的知识。</p>
 <p>先放出本次内容的框架图，以便有条理的阅读和掌握。</p>
 <div align="center"><br><br><img src="/2018/04/13/iOS多线程的介绍与演示/01_Thread.png"><br><br></div>
 
+<p><em>环境： Swift 4.1  Xcode 9.3</em></p>
+<p><em>可下载工程项目，进行把玩，更直观地了解。</em> <a href="https://github.com/ronansparks/ThreadForiOS-Demo" target="_blank" rel="noopener">Github</a></p>
 <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>程序/App：</strong>只是存储数据和文件的文件夹。如一辆Tesla。</p>
 <p><strong>进程：</strong>启动App，才开始有了进程。把车启动了，才能跑起来。</p>
 <p><strong>线程：</strong>一个进程里可以有很多线程，把资源和任务交给它们去执行。车轮跑起来，开冷气，显示屏，都是交给很多的零件负责执行。</p>
