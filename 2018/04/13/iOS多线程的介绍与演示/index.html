@@ -45,7 +45,7 @@
     
     <title>
         
-            iOS个人开发者账号申请 | 
+            iOS多线程的介绍与演示 | 
         
         野猫君の窝
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Be humble">
-    <meta name="keywords" content="iOS Development Design Product Life,开发者账号,App Store,iOS">
+    <meta name="keywords" content="iOS Development Design Product Life,thread,ios">
     <meta name="theme-color" content="#0abab5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -222,7 +222,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="野猫君の窝">
-    <meta name="msapplication-starturl" content="ronansparks.github.io/2018/04/11/iOS个人开发者账号申请/">
+    <meta name="msapplication-starturl" content="ronansparks.github.io/2018/04/13/iOS多线程的介绍与演示/">
     <meta name="msapplication-navbutton-color" content="#0abab5">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="野猫君の窝">
@@ -237,16 +237,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="ronansparks.github.io/2018/04/11/iOS个人开发者账号申请/">
+    <meta property="og:url" content="ronansparks.github.io/2018/04/13/iOS多线程的介绍与演示/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="iOS个人开发者账号申请 | 野猫君の窝">
+    <meta property="og:title" content="iOS多线程的介绍与演示 | 野猫君の窝">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Be humble">
-    <meta property="og:article:tag" content="开发者账号"> <meta property="og:article:tag" content="App Store"> <meta property="og:article:tag" content="iOS"> 
+    <meta property="og:article:tag" content="thread"> <meta property="og:article:tag" content="ios"> 
 
     
-        <meta property="article:published_time" content="Wed Apr 11 2018 08:11:57 GMT+0800">
-        <meta property="article:modified_time" content="Sat Apr 14 2018 15:52:18 GMT+0800">
+        <meta property="article:published_time" content="Fri Apr 13 2018 21:06:24 GMT+0800">
+        <meta property="article:modified_time" content="Sat Apr 14 2018 15:50:14 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -254,7 +254,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="ronansparks.github.io/2018/04/11/iOS个人开发者账号申请/index.html" />
+        <link rel="canonical" href="ronansparks.github.io/2018/04/13/iOS多线程的介绍与演示/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -266,10 +266,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "ronansparks.github.io/2018/04/11/iOS个人开发者账号申请/index.html",
-    "headline": "iOS个人开发者账号申请",
-    "datePublished": "Wed Apr 11 2018 08:11:57 GMT+0800",
-    "dateModified": "Sat Apr 14 2018 15:52:18 GMT+0800",
+    "mainEntityOfPage": "ronansparks.github.io/2018/04/13/iOS多线程的介绍与演示/index.html",
+    "headline": "iOS多线程的介绍与演示",
+    "datePublished": "Fri Apr 13 2018 21:06:24 GMT+0800",
+    "dateModified": "Sat Apr 14 2018 15:50:14 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Ronan",
@@ -287,7 +287,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",开发者账号,App Store,iOSiOS Development Design Product Life",
+    "keywords": ",thread,iosiOS Development Design Product Life",
     "description": "Be humble",
 }
 </script>
@@ -347,6 +347,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本概念"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">基本概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#细说线程"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">细说线程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主线程"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">主线程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多线程"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">多线程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程周期"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">线程周期</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#多线程方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">多线程方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四种方案"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">四种方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Pthread"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">Pthread</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NSThread"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">NSThread</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GCD"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">GCD</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NSOperation"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">NSOperation</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#细说GCD"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">细说GCD</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#同步、异步"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">同步、异步</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#串行、并发"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">串行、并发</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程间通信"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">线程间通信</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#细说NSOperation"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">细说NSOperation</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#线程安全"><span class="post-toc-number">3.</span> <span class="post-toc-text">线程安全</span></a></li></ol>
+    </ul>
+    
 
 
 
@@ -376,7 +385,7 @@
         
     
             <p class="article-headline-p">
-                iOS个人开发者账号申请
+                iOS多线程的介绍与演示
             </p>
         </div>
 
@@ -395,7 +404,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Ronan</strong>
-        <span>4月 11, 2018</span>
+        <span>4月 13, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -419,7 +428,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/App-Store/">App Store</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/iOS/">iOS</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/开发者账号/">开发者账号</a>
+        <a class="post_tag-link" href="/tags/ios/">ios</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/thread/">thread</a>
     </ul>
     
 
@@ -434,7 +443,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2018/04/11/iOS个人开发者账号申请/" class="leancloud-views_num" data-flag-title="iOS个人开发者账号申请">
+                <span id="/2018/04/13/iOS多线程的介绍与演示/" class="leancloud-views_num" data-flag-title="iOS多线程的介绍与演示">
      &nbsp;浏览量
 </span>
 
@@ -446,7 +455,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS个人开发者账号申请&url=ronansparks.github.io/2018/04/11/iOS个人开发者账号申请/index.html&pic=ronansparks.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS多线程的介绍与演示&url=ronansparks.github.io/2018/04/13/iOS多线程的介绍与演示/index.html&pic=ronansparks.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -455,7 +464,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS个人开发者账号申请&url=ronansparks.github.io/2018/04/11/iOS个人开发者账号申请/index.html&via=Ronan" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS多线程的介绍与演示&url=ronansparks.github.io/2018/04/13/iOS多线程的介绍与演示/index.html&via=Ronan" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -464,7 +473,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=ronansparks.github.io/2018/04/11/iOS个人开发者账号申请/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=ronansparks.github.io/2018/04/13/iOS多线程的介绍与演示/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -473,7 +482,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=ronansparks.github.io/2018/04/11/iOS个人开发者账号申请/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=ronansparks.github.io/2018/04/13/iOS多线程的介绍与演示/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -498,41 +507,103 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>今天来手把手讲解一下，申请iOS个人开发者账号的流程。一个从旁观者，到参与者的转变。</p>
-<p>有两个必备条件：</p>
+        <p><em>环境： Swift 4.1  Xcode 9.3</em></p>
+<p>本篇文章会简单介绍线程的概念，以及如何区分。接着开始讲解iOS开发中提到的4种方式，不要紧张，最常用的就2种。最后稍微带过下线程安全方面的知识。</p>
+<p>先放出本次内容的框架图，以便有条理的阅读和掌握。</p>
+<div align="center"><br><br><img src="/2018/04/13/iOS多线程的介绍与演示/01_Thread.png"><br><br></div>
+
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>程序/App：</strong>只是存储数据和文件的文件夹。如一辆Tesla。</p>
+<p><strong>进程：</strong>启动App，才开始有了进程。把车启动了，才能跑起来。</p>
+<p><strong>线程：</strong>一个进程里可以有很多线程，把资源和任务交给它们去执行。车轮跑起来，开冷气，显示屏，都是交给很多的零件负责执行。</p>
+<h2 id="细说线程"><a href="#细说线程" class="headerlink" title="细说线程"></a>细说线程</h2><h3 id="主线程"><a href="#主线程" class="headerlink" title="主线程"></a>主线程</h3><p>在iOS里，处理UI的线程就是主线程，在App启动时由系统自动创建。不要把耗时的操作放在主线程里，会造成页面的卡顿、不响应、崩溃。</p>
+<h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><p>理论上同一时刻，一个CPU只能处理一条线程。但是线程间切换极快，你感觉在同时听歌、聊微信、下载歌曲。使用多线程就是为了提高效率，最大化利用资源，节省时间。</p>
+<h3 id="线程周期"><a href="#线程周期" class="headerlink" title="线程周期"></a>线程周期</h3><p>线程生命周期，如下图所示</p>
+<div align="center"><br><br><img src="/2018/04/13/iOS多线程的介绍与演示/02_Thread_LifeCycle.jpg"><br><br></div>
+
+<p>新建：实例化线程对象。</p>
+<p>待运行：线程实例对象调用start方法，被加入可调度线程池，等待CPU调度。</p>
+<p>运行中：CPU调度该线程实例对象。在完成任务前，CPU可能跑去调度别的线程，使该线程在<strong>待运行</strong>和<strong>运行中</strong>状态间切换。</p>
+<p>阻塞：阻塞该线程执行任何操作。可以手动设置休眠、设置锁、移除可调度线程池。</p>
+<p>结束：完成任务，正常结束周期；未完成任务前，被终止。</p>
+<h1 id="多线程方案"><a href="#多线程方案" class="headerlink" title="多线程方案"></a>多线程方案</h1><h2 id="四种方案"><a href="#四种方案" class="headerlink" title="四种方案"></a>四种方案</h2><h3 id="Pthread"><a href="#Pthread" class="headerlink" title="Pthread"></a>Pthread</h3><p><strong>POSIX</strong>（POSIX threads），一套可在Unix/Linux/Mac等系统通用的多线程API。要手动管理生命周期，太繁琐。</p>
+<h3 id="NSThread"><a href="#NSThread" class="headerlink" title="NSThread"></a>NSThread</h3><p>由Apple提供的，更面向对象，易操作的线程对象。也需要手动管理生命周期。</p>
+<h3 id="GCD"><a href="#GCD" class="headerlink" title="GCD"></a>GCD</h3><p>全称为Grand Centeral Dispatch，由Apple推出，用以替代NSThread，更高效地利用多核。自动管理生命周期。</p>
+<h3 id="NSOperation"><a href="#NSOperation" class="headerlink" title="NSOperation"></a>NSOperation</h3><p>Apple把GCD封装了一层，操作更简便，更符合面向对象。自动管理生命周期。</p>
+<p>我们几乎不怎么使用Pthread，很少使用NSThread。常用的就是GCD和NSOperation</p>
+<h2 id="细说GCD"><a href="#细说GCD" class="headerlink" title="细说GCD"></a>细说GCD</h2><p>要细说GCD，先引入几个概念。</p>
+<h3 id="同步、异步"><a href="#同步、异步" class="headerlink" title="同步、异步"></a>同步、异步</h3><p>同步（sync）和异步（async）指的是能否开启新线程。</p>
+<p>同步：多个任务情况下（如A、B、C），任务A执行结束，才执行B，B执行结束，才执行C。仅一个线程。</p>
+<p>异步：也就是多线程的意思。开启新线程，多个任务可以同时执行。</p>
+<pre><code>//在全局并发队列，同步执行 - 单线程
+DispatchQueue.global().sync {
+
+}
+
+//在全局并发队列，异步执行 - 多线程
+DispatchQueue.global().async {
+
+}
+</code></pre><h3 id="串行、并发"><a href="#串行、并发" class="headerlink" title="串行、并发"></a>串行、并发</h3><p>串行队列（Serial）和并发队列（Concurrent）指的是任务的执行方式。</p>
+<p>串行队列：多个线程时，各个线程按顺序执行，执行完一个线程，才能进入下一个线程。</p>
+<p>并发队列：多个线程可以同时执行。</p>
+<p>手动创建队列的方法</p>
+<pre><code class="swift">//串行队列
+let serialQueue = DispatchQueue(label: &quot;com.ronansparks.serial&quot;)
+//并发队列
+let concurrentQueue = DispatchQueue(label: &quot;com.ronansparks.concurrent&quot;, attributes: .concurrent)
+</code></pre>
+<p>获取GCD全局队列的方法</p>
+<pre><code class="swift">//获取GCD全局并发队列，优先级为默认级别
+DispatchQueue.global().async {
+    //耗时任务放这里执行
+
+    //获取GCD主队列
+    DispatchQueue.main.async {
+    //回主线程，操作UI
+    }
+}
+</code></pre>
 <ul>
-<li>一个Apple ID</li>
-<li>一张Visa / Master的国际信用卡</li>
+<li>同步不会开启新线程，只能按顺序执行；</li>
+<li>串行队列，规定只能顺序执行；（主队列也是串行）</li>
+<li>主队列使用同步，会发生死锁，导致程序崩溃。</li>
+<li>只有并发队列使用异步，才能高效利用资源。开启新线程，同时执行多个任务。</li>
 </ul>
-<p>对于Apple ID，如果你有一部iPhone/iPad/Macbook，那也就有了账号。没有呢，也没有关系，先去这里 <a href="https://appleid.apple.com/account?localang=en_US&amp;appId=632&amp;returnURL=https%3A%2F%2Fidmsa.apple.com%2FIDMSWebAuth%2Flogin.html%3Flanguage%3DUS-EN%26rv%3D1%26path%3D%252Faccount%252F%26Env%3DUAT%26appIdKey%3D891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757#!&amp;page=create" target="_blank" rel="noopener">注册Apple ID</a> 。</p>
-<p>对于国际信用卡，没有的可以去银行申请（推荐招行），或者跟朋友借。</p>
-<p>开始进入正题：</p>
+<h3 id="线程间通信"><a href="#线程间通信" class="headerlink" title="线程间通信"></a>线程间通信</h3><p>在前面获取GCD全局队列的方法里，就是异步线程中耗时操作结束，回到主线程操作UI</p>
+<p>在多个异步并发队列间，插入栅栏，在栅栏位置之后的异步队列需要等前面的所有任务执行完，才开始执行</p>
+<pre><code class="swift">  concurrentQueue.async(flags: .barrier) {
+      //我是一个路障，后面的乖乖等着前面的吧
+  }
+</code></pre>
+<p>延时执行</p>
+<pre><code class="swift">  DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 3) {
+      //3s 后要执行的任务
+  }
+</code></pre>
+<p>队列组。把多线程都丢到一个组里，坐等所有都执行完之后的通知。</p>
+<h2 id="细说NSOperation"><a href="#细说NSOperation" class="headerlink" title="细说NSOperation"></a>细说NSOperation</h2><p>NSOperation是对GCD的封装，需要配合NSOperationQueue才能实现多线程。只需要三步</p>
 <ol>
-<li><p>现在打开 <a href="https://developer.apple.com/programs/cn/" target="_blank" rel="noopener">Apple 开发者</a> 首页，这里可以也找到开发文档、设计指南。（无论是设计师，还是开发者，都应该看下苹果的人机交互指南。）</p>
-</li>
-<li><p>点击右上方的<strong>注册</strong>按钮，跳转页面。</p>
-</li>
-<li><p>跳转后，点击页面底部<strong>开始注册</strong>按钮，跳转页面。</p>
-</li>
-<li><p>输入Apple ID账号和密码，跳转页面。</p>
-</li>
-<li><p>检查上方<strong>Name</strong>后面的拼音是不是真实姓名（如张三，应显示 SAN ZHANG，大小写都行），正确的话进入下一步。（个人开发者，名称必须和身份证上一致！不然付款成功后会要求上传身份证，不一致的话还需要修改并再次上传身份证。如果需要修改，去 <a href="https://appleid.apple.com/#!&amp;page=signin" target="_blank" rel="noopener">Apple ID登录</a> ，在账户区域的右边有个<strong>编辑</strong>，点击进行修改。）</p>
-</li>
-<li><p>选择开发者账号类型，这里选择<strong>Individual / Sole Proprietor / Single Person Business</strong>，即个人开发者类型，点击<strong>Continue</strong>按钮，跳转页面。</p>
-</li>
-<li><p>填写个人信息（如图1），完成后点击<strong>Continue</strong>按钮，跳转页面。</p>
-<div align="center"><br><br><img src="/2018/04/11/iOS个人开发者账号申请/01_Information.jpg" title="填写个人信息"><br><br>图1 填写个人信息<br><br></div>
-</li>
-<li><p>核对信息无误后，点击<strong>Continue</strong>，跳转页面。</p>
-</li>
-<li><p>确认订单，价格：688，期限：1年。点击<strong>Purchase</strong>进行购买。</p>
-</li>
-<li><p>输入信用卡信息，确认账单地址，这里没什么好说的，提示缺啥填啥。直接下一步、下一步、立即下订单。立刻会收到付款成功邮件，就表示成功了。十分钟左右还会收到电子收据邮件。</p>
-</li>
-<li><p>坐等苹果通知。（一般在24h 内通过，可到开发者中心查询状态。如24小时后仍处于<strong>Pending</strong>状态，直接给苹果开发者中心打电话 <strong>4006 701 855</strong> ）</p>
-<p>​</p>
-</li>
+<li>创建任务（NSOperation）</li>
+<li>创建队列（NSOperationQueue）</li>
+<li>把任务添加到队列</li>
 </ol>
+<p>NSOperation是个抽象类，我们使用它的子类NSBlockOperation（用Objective-C还有子类NSInvocationOperation，因为不是类型安全，所以在Swift里被禁用了），或者自定义子类。</p>
+<ul>
+<li>不添加到队列，需要手动调用start方法，默认在主线程执行。</li>
+<li>Operation添加到队列后，自动执行。</li>
+<li>实例可以通过添加执行代码块的方式，实现主线程。<strong>addExecutionBlock { code }</strong></li>
+</ul>
+<p>NSOperationQueue有主队列、和其他队列（串行、并发）。</p>
+<ul>
+<li>可以不需要单独创建Operation，通过队列代码块实现异步。</li>
+<li>同GCD，在耗时操作执行后，切回主线程操作UI。通过<strong>OperationQueue.main</strong>访问主线程队列，把UI操作加入到该队列</li>
+<li>可以设置最大并发数。设置为1，即顺序执行。</li>
+<li>可以取消、暂停某个操作或整个队列里的操作。</li>
+<li>可以设置依赖，即B必须在A完成之后才能执行。</li>
+</ul>
+<h1 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h1><p>多个线程访问一个资源的时候，容易导致数据错乱、数据安全问题。</p>
+<p>互斥锁（同步锁）：第一个线程访问的时候，加个锁，表示它在使用；后来的都无法访问，进入休眠。</p>
+<p>自旋锁：当新线程访问时，发现对象已被锁定，它会一直等待，不停尝试访问，耗性能。</p>
 
         
     
@@ -576,19 +647,19 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/04/13/iOS多线程的介绍与演示/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/04/11/iOS个人开发者账号申请/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
