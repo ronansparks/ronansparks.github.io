@@ -19,9 +19,9 @@
             
             <tag> 需求 </tag>
             
-            <tag> 层次 </tag>
+            <tag> 马斯洛 </tag>
             
-            <tag> 方法 </tag>
+            <tag> 需求层次 </tag>
             
         </tags>
       
@@ -35,20 +35,22 @@
       
       <categories>
           
-          <category> 产品 </category>
+          <category> 书籍 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 爆发式 </tag>
+            <tag> 引爆点 </tag>
             
             <tag> 传播 </tag>
             
             <tag> 心理学 </tag>
             
             <tag> 产品 </tag>
+            
+            <tag> 商业 </tag>
             
         </tags>
       
