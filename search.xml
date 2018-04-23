@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>23种设计模式的Swift实现</title>
+      <link href="/2018/04/21/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84Swift%E5%AE%9E%E7%8E%B0/"/>
+      <url>/2018/04/21/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84Swift%E5%AE%9E%E7%8E%B0/</url>
+      <content type="html"><![CDATA[<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在介绍设计模式之前，先声明几点，以免大家误入歧途。</p><p>对于设计模式的作用，一直很有争议。有人奉为圭臬，有人嗤之以鼻，他们的认知都错了吗？不是的，他们都受了“知识的诅咒”。</p><p>“知识的诅咒”是说，在你学会一个方法前，觉得好像有点难；而在你学会之后，很难想象不会这个方法是种什么样的体验。比如你学会了修电脑之后，觉得挺简单的，就纳闷“怎么会有人不懂修电脑？”（5分钟就搞定，那我就不留下来过夜了…）。</p><p>新手刚学习了设计模式，但是还没有完全理解，急于应用在代码中，就会出现生搬硬套，过度设计的状况。</p><p>而嗤之以鼻的人觉得没有自己学习设计模式，也写过了很多“单例模式”、“观察者模式”，这是属于一种探索的模式，以实践代替理论，这可能导致疏忽，写来写去也就会那几种模式，遇到问题时，需要花费数倍的时间来探索。</p><p>而学了设计模式的人，并知道设计模式的出现是为了解决什么问题，他们并不会随时想着使用设计模式，而是在需要的时候，灵活应用。</p><h2 id="理性看待"><a href="#理性看待" class="headerlink" title="理性看待"></a>理性看待</h2><p>设计模式，只是一种对经验的总结。因为这些解决问题的方法，被反复使用，是开发者试错、验证总结出来的。所以对它们进行整理分类，给更多的人看到，避免采坑，避免重复造轮子（每个人都根据经验自己总结一遍）。</p><p>设计模式的目的，为了代码的可重用性、可靠性，便于与其他开发者的沟通。</p><img src="/2018/04/21/23种设计模式的Swift实现/01_23种设计模式.png"><h1 id="创建型"><a href="#创建型" class="headerlink" title="创建型"></a>创建型</h1><p>这些模式关注在创建对象时，对内部创建逻辑的隐藏方式。</p><h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>保证一个类仅有一个实例，并可在全局访问。</p><h2 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h2><h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h2><h2 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h2><h1 id="结构型"><a href="#结构型" class="headerlink" title="结构型"></a>结构型</h1><h2 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h2><h2 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h2><h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><h2 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h2><h2 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h2><h2 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h2><h2 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h2><h1 id="行为型"><a href="#行为型" class="headerlink" title="行为型"></a>行为型</h1><h2 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h2><h2 id="模板模式"><a href="#模板模式" class="headerlink" title="模板模式"></a>模板模式</h2><h2 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h2><h2 id="迭代器模式"><a href="#迭代器模式" class="headerlink" title="迭代器模式"></a>迭代器模式</h2><h2 id="责任链模式"><a href="#责任链模式" class="headerlink" title="责任链模式"></a>责任链模式</h2><h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><h2 id="备忘录模式"><a href="#备忘录模式" class="headerlink" title="备忘录模式"></a>备忘录模式</h2><h2 id="状态模式"><a href="#状态模式" class="headerlink" title="状态模式"></a>状态模式</h2><h2 id="访问器模式"><a href="#访问器模式" class="headerlink" title="访问器模式"></a>访问器模式</h2><h2 id="中介者模式"><a href="#中介者模式" class="headerlink" title="中介者模式"></a>中介者模式</h2><h2 id="解释器模式"><a href="#解释器模式" class="headerlink" title="解释器模式"></a>解释器模式</h2>]]></content>
+      
+      <categories>
+          
+          <category> 代码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> swift </tag>
+            
+            <tag> design pattern </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>产品需求 - 从理解到实施</title>
       <link href="/2018/04/19/%E4%BA%A7%E5%93%81%E9%9C%80%E6%B1%82-%E4%BB%8E%E7%90%86%E8%A7%A3%E5%88%B0%E5%AE%9E%E6%96%BD/"/>
       <url>/2018/04/19/%E4%BA%A7%E5%93%81%E9%9C%80%E6%B1%82-%E4%BB%8E%E7%90%86%E8%A7%A3%E5%88%B0%E5%AE%9E%E6%96%BD/</url>
