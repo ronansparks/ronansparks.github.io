@@ -45,7 +45,7 @@
     
     <title>
         
-            如何打造流行  - 《引爆点》 | 
+            iOS动画之UIView动画 | 
         
         野猫君の窝
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Be humble">
-    <meta name="keywords" content="iOS Development Design Product Life,引爆点,传播,心理学,产品,商业">
+    <meta name="keywords" content="iOS Development Design Product Life,iOS,uiview,animation">
     <meta name="theme-color" content="#0abab5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -222,7 +222,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="野猫君の窝">
-    <meta name="msapplication-starturl" content="ronansparks.github.io/2018/04/15/如何打造流行-《引爆点》/">
+    <meta name="msapplication-starturl" content="ronansparks.github.io/2018/04/24/091143/">
     <meta name="msapplication-navbutton-color" content="#0abab5">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="野猫君の窝">
@@ -237,16 +237,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="ronansparks.github.io/2018/04/15/如何打造流行-《引爆点》/">
+    <meta property="og:url" content="ronansparks.github.io/2018/04/24/091143/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="如何打造流行  - 《引爆点》 | 野猫君の窝">
+    <meta property="og:title" content="iOS动画之UIView动画 | 野猫君の窝">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Be humble">
-    <meta property="og:article:tag" content="引爆点"> <meta property="og:article:tag" content="传播"> <meta property="og:article:tag" content="心理学"> <meta property="og:article:tag" content="产品"> <meta property="og:article:tag" content="商业"> 
+    <meta property="og:article:tag" content="iOS"> <meta property="og:article:tag" content="uiview"> <meta property="og:article:tag" content="animation"> 
 
     
-        <meta property="article:published_time" content="Sun Apr 15 2018 10:20:22 GMT+0800">
-        <meta property="article:modified_time" content="Wed Apr 25 2018 20:50:30 GMT+0800">
+        <meta property="article:published_time" content="Tue Apr 24 2018 09:11:43 GMT+0800">
+        <meta property="article:modified_time" content="Wed Apr 25 2018 21:50:05 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -254,7 +254,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="ronansparks.github.io/2018/04/15/如何打造流行-《引爆点》/index.html" />
+        <link rel="canonical" href="ronansparks.github.io/2018/04/24/091143/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -266,10 +266,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "ronansparks.github.io/2018/04/15/如何打造流行-《引爆点》/index.html",
-    "headline": "如何打造流行  - 《引爆点》",
-    "datePublished": "Sun Apr 15 2018 10:20:22 GMT+0800",
-    "dateModified": "Wed Apr 25 2018 20:50:30 GMT+0800",
+    "mainEntityOfPage": "ronansparks.github.io/2018/04/24/091143/index.html",
+    "headline": "iOS动画之UIView动画",
+    "datePublished": "Tue Apr 24 2018 09:11:43 GMT+0800",
+    "dateModified": "Wed Apr 25 2018 21:50:05 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Ronan",
@@ -287,7 +287,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",引爆点,传播,心理学,产品,商业iOS Development Design Product Life",
+    "keywords": ",iOS,uiview,animationiOS Development Design Product Life",
     "description": "Be humble",
 }
 </script>
@@ -353,7 +353,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三个法则"><span class="post-toc-number">1.</span> <span class="post-toc-text">三个法则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#个别人物法则"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">个别人物法则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#联系员"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">联系员</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内行"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">内行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#推销员"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">推销员</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三者之间的联系"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">三者之间的联系</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#附着力因素法则"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">附着力因素法则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#打磨产品"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">打磨产品</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扫除障碍"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">扫除障碍</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境威力法则"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">环境威力法则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#破窗理论"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">破窗理论</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本归因错误"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">基本归因错误</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#群体力量"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">群体力量</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开始行动"><span class="post-toc-number">2.</span> <span class="post-toc-text">开始行动</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单点突破"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">单点突破</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#传真机效应"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">传真机效应</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内行陷阱"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">内行陷阱</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#内容动画"><span class="post-toc-number">1.</span> <span class="post-toc-text">内容动画</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#属性动画"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">属性动画</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视图控制器动画"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">视图控制器动画</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#物理动画"><span class="post-toc-number">2.</span> <span class="post-toc-text">物理动画</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UIKit动态"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">UIKit动态</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#视差效果"><span class="post-toc-number">3.</span> <span class="post-toc-text">视差效果</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运动效果"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">运动效果</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -385,7 +385,7 @@
         
     
             <p class="article-headline-p">
-                如何打造流行  - 《引爆点》
+                iOS动画之UIView动画
             </p>
         </div>
 
@@ -404,7 +404,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Ronan</strong>
-        <span>4月 15, 2018</span>
+        <span>4月 24, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -428,7 +428,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/产品/">产品</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/传播/">传播</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/商业/">商业</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/引爆点/">引爆点</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/心理学/">心理学</a>
+        <a class="post_tag-link" href="/tags/animation/">animation</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/iOS/">iOS</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/uiview/">uiview</a>
     </ul>
     
 
@@ -443,7 +443,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2018/04/15/如何打造流行-《引爆点》/" class="leancloud-views_num" data-flag-title="如何打造流行  - 《引爆点》">
+                <span id="/2018/04/24/091143/" class="leancloud-views_num" data-flag-title="iOS动画之UIView动画">
      &nbsp;浏览量
 </span>
 
@@ -455,7 +455,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=如何打造流行  - 《引爆点》&url=ronansparks.github.io/2018/04/15/如何打造流行-《引爆点》/index.html&pic=ronansparks.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS动画之UIView动画&url=ronansparks.github.io/2018/04/24/091143/index.html&pic=ronansparks.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -464,7 +464,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=如何打造流行  - 《引爆点》&url=ronansparks.github.io/2018/04/15/如何打造流行-《引爆点》/index.html&via=Ronan" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS动画之UIView动画&url=ronansparks.github.io/2018/04/24/091143/index.html&via=Ronan" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -473,7 +473,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=ronansparks.github.io/2018/04/15/如何打造流行-《引爆点》/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=ronansparks.github.io/2018/04/24/091143/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -482,7 +482,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=ronansparks.github.io/2018/04/15/如何打造流行-《引爆点》/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=ronansparks.github.io/2018/04/24/091143/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -507,35 +507,143 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>2011年之前，两个朋友网上聊天前，都是A先发送两个字 - “在吗”，有时A还喜欢加个问号”？”，B也要回复“嗯/在/在的”这几个备选词，然后开始瞎扯。大家仿佛都遵从了TCP协议一样。</p>
-<p>这一天，你在某软件上收到一条语音，打破了整个世界的平静。楼道里、教室里、大街上，对着手机自言自语的人开始多了起来，声音此起彼伏。打望了一圈，人们看上去好像和平时一样，只是惊讶姿势如此统一，手机在手上，手在嘴边。聊天不再TCP式，假设对方永久在线，直接切入主题。微信就这样入侵了人们的世界，个个不能自已，上瘾一样。</p>
-<p>无人问津到炙手可热，有时可能只是中间差那么一点，引爆点。</p>
-<p>流行的特征：</p>
-<ul>
-<li>传染性：像流感一样，无法抗拒。</li>
-<li>蝴蝶效应：细节可能导致失败，或者成功。</li>
-<li>爆发式：一夜之间，家喻户晓、洛阳纸贵。</li>
-</ul>
-<p><em>《引爆点》- 马尔科姆·格拉德威尔</em></p>
-<img src="/2018/04/15/如何打造流行-《引爆点》/01_Structure.png">
-<h1 id="三个法则"><a href="#三个法则" class="headerlink" title="三个法则"></a>三个法则</h1><h2 id="个别人物法则"><a href="#个别人物法则" class="headerlink" title="个别人物法则"></a>个别人物法则</h2><h3 id="联系员"><a href="#联系员" class="headerlink" title="联系员"></a>联系员</h3><p>有个关于人与人之间关系的理论，叫做六度人脉理论（Six Degrees of Separation），也叫六步分离法则。它指的事地球上所有人都可以通过六层熟人关系和其他人联系起来。比如说你可以通过你最有影响力的朋友（政府官员、红人、高管），再通过他的人脉，总共不超过6次传递，就可以把你的笑话讲给特朗普听。</p>
-<p>这里谈到的你最有影响力的朋友，就是属于联系员，这类人可以把消息最快地传播出去。如现在的网红，都是特定领域的联系员</p>
-<h3 id="内行"><a href="#内行" class="headerlink" title="内行"></a>内行</h3><p>这类人一般在他工作的行业，或者爱好的领域，投入了足够多的时间，去尝试新事物，去研究，乐于分享。在他的圈子都很受欢迎，说话有分量。</p>
-<p>所以我们倾向于向吃货朋友询问附近的美食，向美剧控朋友寻求资源，请程序员朋友修电脑（别打我）。</p>
-<h3 id="推销员"><a href="#推销员" class="headerlink" title="推销员"></a>推销员</h3><p>这类人喜欢与人打交道，精力充沛，能够看透客户的心理，更容易说服别人。可以把死的说成活的，你还配合地连连点头称是。</p>
-<h3 id="三者之间的联系"><a href="#三者之间的联系" class="headerlink" title="三者之间的联系"></a>三者之间的联系</h3><p>联系员靠广撒网多捞鱼，比如推荐附近一家饭店给10个朋友，可能就有5个会去；内行靠权威性，比如给5个朋友推荐餐馆，可能这5个人都会去；推销员靠心理学 + 嘴皮子，知道你喜欢这口味，给个优惠券，你就屁颠屁颠地跑去这家餐馆了。</p>
-<h2 id="附着力因素法则"><a href="#附着力因素法则" class="headerlink" title="附着力因素法则"></a>附着力因素法则</h2><h3 id="打磨产品"><a href="#打磨产品" class="headerlink" title="打磨产品"></a>打磨产品</h3><p>一款产品，用尽手段，即使拉到了用户，短期内实现了增长。但如果产品本身不够好，没有用户黏性，具有欺骗性质的。要不了多久，还是会趋近于其本身所应处的位置。</p>
-<h3 id="扫除障碍"><a href="#扫除障碍" class="headerlink" title="扫除障碍"></a>扫除障碍</h3><p>为什么国外大公司进入中国，大都会水土不服？或许他们认为Too good for us，不屑针对本地化进行定制；或许不懂国情和文化。针对目标用户设计，倾听用户意见，这些措施能够减少用户的负担，使得用户易于使用产品。</p>
-<h2 id="环境威力法则"><a href="#环境威力法则" class="headerlink" title="环境威力法则"></a>环境威力法则</h2><h3 id="破窗理论"><a href="#破窗理论" class="headerlink" title="破窗理论"></a>破窗理论</h3><p>如果一栋房屋有几扇窗户被打破了，没有修理，慢慢地有会有更多窗户被打破。类似的有，音乐节上，嘈杂的人群，一个人开始没有带走垃圾，不久到处都是垃圾；如某xxBeta新闻网站，一个人开始评论脏话，无脑喷子，管理员不清理，慢慢的整个网站评论下都是喷子。</p>
-<p>尤其产品初期，通过紧盯反馈，评论，及时解决用户问题，疏导用户情绪；企业遇到公关危机，及时PR，不然越来越多吃瓜群众也开始跟着抨击。</p>
-<h3 id="基本归因错误"><a href="#基本归因错误" class="headerlink" title="基本归因错误"></a>基本归因错误</h3><p>人们总爱犯的一种错误是，高估性格因素，低估具体情形和环境因素。</p>
-<p>近朱者赤近墨者黑。要理解环境的重要性，营造良好的环境、基调、氛围，针对具体情形迅速拿出可行的方案。</p>
-<h3 id="群体力量"><a href="#群体力量" class="headerlink" title="群体力量"></a>群体力量</h3><p>任何新兴意识形态的传播都要借助于群体力量。为了长期发展，增加用户黏性，必须建立社区或组织，这样人们可以交流，互相影响，提高忠诚度，产生1 + 1 &gt; 2的效果。</p>
-<h1 id="开始行动"><a href="#开始行动" class="headerlink" title="开始行动"></a>开始行动</h1><h3 id="单点突破"><a href="#单点突破" class="headerlink" title="单点突破"></a>单点突破</h3><p>尤其是企业，产品初期，可用的资源有限，无法覆盖全面，把有限的资源集中用到关键方面。也就是现在常说的单点突破</p>
-<h3 id="传真机效应"><a href="#传真机效应" class="headerlink" title="传真机效应"></a>传真机效应</h3><p>也叫充裕定律，加入网络的个体越多，网络的价值越高。</p>
-<p>第一台传真机零售价2000美元，如果世界仅此一台，它是毫无价值的。第二台传真机，使得第一台有了价值。第三台传真机使得彼此更有价值。比如我们更多是用微信，而很少用FB，或其他私密社交，因为我们的熟人都在这里，别的软件就没那么多价值。</p>
-<h3 id="内行陷阱"><a href="#内行陷阱" class="headerlink" title="内行陷阱"></a>内行陷阱</h3><p>这不是个贬义词，是说如何找到内行人士。</p>
-<p>做产品，要留下反馈渠道，只有内行才会花费时间去反馈，换做一般人，用着不合适直接不用，根本不会考虑告诉你哪里有问题。因此反馈渠道不能太深，而且收到反馈后，应予以回应，至少一条自动回复的感谢消息，也会鼓励内行人士继续使用并反馈。</p>
+        <p><strong>前言</strong></p>
+<p>对于一个App，能完成基本功能，只能算及格。优秀的交互、视觉能够提升用户体验，够得上优秀。再加上细节、打动人心的动画，就更完美了。</p>
+<h1 id="内容动画"><a href="#内容动画" class="headerlink" title="内容动画"></a>内容动画</h1><h2 id="属性动画"><a href="#属性动画" class="headerlink" title="属性动画"></a>属性动画</h2><p>通过改变视图（UIView）的属性值来创建动画。</p>
+<p>可以设置的属性有：</p>
+<ol>
+<li>中心坐标（center）</li>
+<li>大小（bounds）</li>
+<li>大小及原点坐标（frame）</li>
+<li>变换（transform）</li>
+<li>透明度（alpha）</li>
+<li>背景色（backgroundColor）</li>
+<li>内容拉伸（contentStretch）</li>
+</ol>
+<p>iOS 4 之后，苹果推荐使用Block动画方法。（iOS 4 之前有种手动开始、结束动画的方法。也就没必要介绍了。）</p>
+<p>使用以下3种Block动画</p>
+<ol>
+<li>普通动画。设置动画时长、动画效果</li>
+</ol>
+<pre><code class="swift">UIView.animate(withDuration: TimeInterval) {
+    //动画        
+}
+</code></pre>
+<ol start="2">
+<li>延时动画。设置动画时长、动画效果、动画完成回调</li>
+</ol>
+<pre><code class="swift">UIView.animate(withDuration: TimeInterval, animations: {
+    //动画
+}) { finishFlag in
+    //动画完成回调        
+}
+</code></pre>
+<ol start="3">
+<li>过渡效果动画。设置动画时长、延迟时间、过渡效果、动画效果、动画完成回调</li>
+</ol>
+<pre><code class="swift">UIView.animate(withDuration: TimeInterval, delay: TimeInterval, options: UIViewAnimationOptions, animations: {
+    //动画        
+}) { finishFlag in
+    //动画完成回调        
+}
+</code></pre>
+<p>UIViewAnimationOptions结构体参数</p>
+<pre><code class="swift">public static var layoutSubviews: UIViewAnimationOptions { get } //动画过程时，布局子控件
+
+public static var allowUserInteraction: UIViewAnimationOptions { get } // 动画过程中，允许用户交互
+
+public static var beginFromCurrentState: UIViewAnimationOptions { get } // 从当前状态开始动画
+
+public static var `repeat`: UIViewAnimationOptions { get } // 无限循环动画
+
+public static var autoreverse: UIViewAnimationOptions { get } // 如果循环动画，往返两个方向进行
+
+public static var overrideInheritedDuration: UIViewAnimationOptions { get } // 忽略方法里动画时长
+
+public static var overrideInheritedCurve: UIViewAnimationOptions { get } // 忽略方法里的曲线设置
+
+public static var allowAnimatedContent: UIViewAnimationOptions { get } // 转场： 动画过程中，重绘视图
+
+public static var showHideTransitionViews: UIViewAnimationOptions { get } // 专场： 翻转到隐藏状态，或者从隐藏状态翻转到显示出来。
+
+public static var overrideInheritedOptions: UIViewAnimationOptions { get } // 不继承父动画的设置
+
+
+public static var curveEaseInOut: UIViewAnimationOptions { get } // 时间曲线，慢进慢出(默认)
+
+public static var curveEaseIn: UIViewAnimationOptions { get } // 时间曲线，慢进
+
+public static var curveEaseOut: UIViewAnimationOptions { get } // 时间曲线，慢出
+
+public static var curveLinear: UIViewAnimationOptions { get } // 时间曲线，匀速进出
+
+
+public static var transitionFlipFromLeft: UIViewAnimationOptions { get } //转场： 从左向右翻页
+
+public static var transitionFlipFromRight: UIViewAnimationOptions { get } //转场： 从右向左翻页
+
+public static var transitionCurlUp: UIViewAnimationOptions { get } //转场： 从下向上卷曲翻页
+
+public static var transitionCurlDown: UIViewAnimationOptions { get } //转场： 从上向下卷曲翻页
+
+public static var transitionCrossDissolve: UIViewAnimationOptions { get } //转场： 交叉消失和出现
+
+public static var transitionFlipFromTop: UIViewAnimationOptions { get } //转场： 从上向下翻页
+
+public static var transitionFlipFromBottom: UIViewAnimationOptions { get } //转场： 从下向上翻页
+
+
+public static var preferredFramesPerSecond60: UIViewAnimationOptions { get } //转场： 帧率60
+
+public static var preferredFramesPerSecond30: UIViewAnimationOptions { get } //转场： 帧率30
+</code></pre>
+<ol start="4">
+<li>弹性动画</li>
+</ol>
+<pre><code class="swift">UIView.animate(withDuration: TimeInterval, delay: TimeInterval, usingSpringWithDamping: CGFloat, initialSpringVelocity: CGFloat, options: UIViewAnimationOptions, animations: {
+    //动画
+}) { finishFlag in
+    //动画完成回调
+}
+</code></pre>
+<ol start="5">
+<li>帧动画</li>
+</ol>
+<pre><code class="swift">UIView.animateKeyframes(withDuration: TimeInterval, delay: TimeInterval, options: UIViewKeyframeAnimationOptions, animations: {
+    //动画        
+}) { finishFlag in
+    //动画完成回调        
+}
+</code></pre>
+<p>UIViewKeyframeAnimationOptions结构体</p>
+<pre><code class="swift">public static var layoutSubviews: UIViewKeyframeAnimationOptions { get }
+
+public static var allowUserInteraction: UIViewKeyframeAnimationOptions { get } // 动画过程中，允许用户交互
+
+public static var beginFromCurrentState: UIViewKeyframeAnimationOptions { get } // 从当前状态开始动画
+
+public static var `repeat`: UIViewKeyframeAnimationOptions { get } // 无限循环动画
+
+public static var autoreverse: UIViewKeyframeAnimationOptions { get } // 如果循环动画，往返两个方向进行
+
+public static var overrideInheritedDuration: UIViewKeyframeAnimationOptions { get } // 忽略方法里动画时长
+
+public static var overrideInheritedOptions: UIViewKeyframeAnimationOptions { get } // 不继承父动画的设置
+
+
+public static var calculationModeLinear: UIViewKeyframeAnimationOptions { get } // 运算模式： 连续
+
+public static var calculationModeDiscrete: UIViewKeyframeAnimationOptions { get } // 运算模式： 离散
+
+public static var calculationModePaced: UIViewKeyframeAnimationOptions { get } // 运算模式： 均匀
+
+public static var calculationModeCubic: UIViewKeyframeAnimationOptions { get } // 运算模式： 平滑
+
+public static var calculationModeCubicPaced: UIViewKeyframeAnimationOptions { get } // 运算模式： 平滑均匀
+</code></pre>
+<h2 id="视图控制器动画"><a href="#视图控制器动画" class="headerlink" title="视图控制器动画"></a>视图控制器动画</h2><p>自定义视图控制器（UIViewController）的转场动画。</p>
+<h1 id="物理动画"><a href="#物理动画" class="headerlink" title="物理动画"></a>物理动画</h1><h2 id="UIKit动态"><a href="#UIKit动态" class="headerlink" title="UIKit动态"></a>UIKit动态</h2><p>给UIView应用真实世界的物理效果。</p>
+<h1 id="视差效果"><a href="#视差效果" class="headerlink" title="视差效果"></a>视差效果</h1><h2 id="运动效果"><a href="#运动效果" class="headerlink" title="运动效果"></a>运动效果</h2><p>给UIView添加微妙的效果，来展现3D效果</p>
 
         
     
@@ -579,7 +687,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/04/19/产品需求-从理解到实施/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/04/25/085341/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -593,7 +701,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2018/04/13/iOS多线程的介绍与演示/" id="post_nav-older" class="next-content">
+        <a href="/2018/04/21/204303/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
