@@ -10,7 +10,7 @@
       
       <categories>
           
-          <category> 书籍 </category>
+          <category> 读些 BOOK </category>
           
       </categories>
       
@@ -31,14 +31,20 @@
       <url>/2018/04/24/iOS%E5%8A%A8%E7%94%BB%E4%B9%8BUIView%E5%8A%A8%E7%94%BB/</url>
       <content type="html"><![CDATA[<p><strong>前言</strong></p><p>对于一个App，能完成基本功能，只能算及格。优秀的交互、视觉能够提升用户体验，够得上优秀。再加上细节、打动人心的动画，就更完美了。</p><h1 id="内容动画"><a href="#内容动画" class="headerlink" title="内容动画"></a>内容动画</h1><h2 id="属性动画"><a href="#属性动画" class="headerlink" title="属性动画"></a>属性动画</h2><p>通过改变视图（UIView）的属性值来创建动画。</p><p>可以设置的属性有：</p><ol><li>中心坐标（center）</li><li>大小（bounds）</li><li>大小及原点坐标（frame）</li><li>变换（transform）</li><li>透明度（alpha）</li><li>背景色（backgroundColor）</li><li>内容拉伸（contentStretch）</li></ol><p>iOS 4 之后，苹果推荐使用Block动画方法。（iOS 4 之前有种手动开始、结束动画的方法。也就没必要介绍了。）</p><p>使用以下3种Block动画</p><ol><li>普通动画。设置动画时长、动画效果</li></ol><pre><code class="swift">UIView.animate(withDuration: TimeInterval) {    //动画        }</code></pre><ol start="2"><li>延时动画。设置动画时长、动画效果、动画完成回调</li></ol><pre><code class="swift">UIView.animate(withDuration: TimeInterval, animations: {    //动画}) { finishFlag in    //动画完成回调        }</code></pre><ol start="3"><li>过渡效果动画。设置动画时长、延迟时间、过渡效果、动画效果、动画完成回调</li></ol><pre><code class="swift">UIView.animate(withDuration: TimeInterval, delay: TimeInterval, options: UIViewAnimationOptions, animations: {    //动画        }) { finishFlag in    //动画完成回调        }</code></pre><p>UIViewAnimationOptions结构体参数</p><pre><code class="swift">public static var layoutSubviews: UIViewAnimationOptions { get } //动画过程时，布局子控件public static var allowUserInteraction: UIViewAnimationOptions { get } // 动画过程中，允许用户交互public static var beginFromCurrentState: UIViewAnimationOptions { get } // 从当前状态开始动画public static var `repeat`: UIViewAnimationOptions { get } // 无限循环动画public static var autoreverse: UIViewAnimationOptions { get } // 如果循环动画，往返两个方向进行public static var overrideInheritedDuration: UIViewAnimationOptions { get } // 忽略方法里动画时长public static var overrideInheritedCurve: UIViewAnimationOptions { get } // 忽略方法里的曲线设置public static var allowAnimatedContent: UIViewAnimationOptions { get } // 转场： 动画过程中，重绘视图public static var showHideTransitionViews: UIViewAnimationOptions { get } // 专场： 翻转到隐藏状态，或者从隐藏状态翻转到显示出来。public static var overrideInheritedOptions: UIViewAnimationOptions { get } // 不继承父动画的设置public static var curveEaseInOut: UIViewAnimationOptions { get } // 时间曲线，慢进慢出(默认)public static var curveEaseIn: UIViewAnimationOptions { get } // 时间曲线，慢进public static var curveEaseOut: UIViewAnimationOptions { get } // 时间曲线，慢出public static var curveLinear: UIViewAnimationOptions { get } // 时间曲线，匀速进出public static var transitionFlipFromLeft: UIViewAnimationOptions { get } //转场： 从左向右翻页public static var transitionFlipFromRight: UIViewAnimationOptions { get } //转场： 从右向左翻页public static var transitionCurlUp: UIViewAnimationOptions { get } //转场： 从下向上卷曲翻页public static var transitionCurlDown: UIViewAnimationOptions { get } //转场： 从上向下卷曲翻页public static var transitionCrossDissolve: UIViewAnimationOptions { get } //转场： 交叉消失和出现public static var transitionFlipFromTop: UIViewAnimationOptions { get } //转场： 从上向下翻页public static var transitionFlipFromBottom: UIViewAnimationOptions { get } //转场： 从下向上翻页public static var preferredFramesPerSecond60: UIViewAnimationOptions { get } //转场： 帧率60public static var preferredFramesPerSecond30: UIViewAnimationOptions { get } //转场： 帧率30</code></pre><ol start="4"><li>弹性动画</li></ol><pre><code class="swift">UIView.animate(withDuration: TimeInterval, delay: TimeInterval, usingSpringWithDamping: CGFloat, initialSpringVelocity: CGFloat, options: UIViewAnimationOptions, animations: {    //动画}) { finishFlag in    //动画完成回调}</code></pre><ol start="5"><li>帧动画</li></ol><pre><code class="swift">UIView.animateKeyframes(withDuration: TimeInterval, delay: TimeInterval, options: UIViewKeyframeAnimationOptions, animations: {    //动画        }) { finishFlag in    //动画完成回调        }</code></pre><p>UIViewKeyframeAnimationOptions结构体</p><pre><code class="swift">public static var layoutSubviews: UIViewKeyframeAnimationOptions { get }public static var allowUserInteraction: UIViewKeyframeAnimationOptions { get } // 动画过程中，允许用户交互public static var beginFromCurrentState: UIViewKeyframeAnimationOptions { get } // 从当前状态开始动画public static var `repeat`: UIViewKeyframeAnimationOptions { get } // 无限循环动画public static var autoreverse: UIViewKeyframeAnimationOptions { get } // 如果循环动画，往返两个方向进行public static var overrideInheritedDuration: UIViewKeyframeAnimationOptions { get } // 忽略方法里动画时长public static var overrideInheritedOptions: UIViewKeyframeAnimationOptions { get } // 不继承父动画的设置public static var calculationModeLinear: UIViewKeyframeAnimationOptions { get } // 运算模式： 连续public static var calculationModeDiscrete: UIViewKeyframeAnimationOptions { get } // 运算模式： 离散public static var calculationModePaced: UIViewKeyframeAnimationOptions { get } // 运算模式： 均匀public static var calculationModeCubic: UIViewKeyframeAnimationOptions { get } // 运算模式： 平滑public static var calculationModeCubicPaced: UIViewKeyframeAnimationOptions { get } // 运算模式： 平滑均匀</code></pre><h2 id="视图控制器动画"><a href="#视图控制器动画" class="headerlink" title="视图控制器动画"></a>视图控制器动画</h2><p>自定义视图控制器（UIViewController）的转场动画。</p><h1 id="物理动画"><a href="#物理动画" class="headerlink" title="物理动画"></a>物理动画</h1><h2 id="UIKit动态"><a href="#UIKit动态" class="headerlink" title="UIKit动态"></a>UIKit动态</h2><p>给UIView应用真实世界的物理效果。</p><h1 id="视差效果"><a href="#视差效果" class="headerlink" title="视差效果"></a>视差效果</h1><h2 id="运动效果"><a href="#运动效果" class="headerlink" title="运动效果"></a>运动效果</h2><p>给UIView添加微妙的效果，来展现3D效果</p>]]></content>
       
+      <categories>
+          
+          <category> 写点 BUG </category>
+          
+      </categories>
+      
       
         <tags>
             
             <tag> iOS </tag>
             
-            <tag> animation </tag>
-            
             <tag> uiview </tag>
+            
+            <tag> animation </tag>
             
         </tags>
       
@@ -52,7 +58,7 @@
       
       <categories>
           
-          <category> 代码 </category>
+          <category> 写点 BUG </category>
           
       </categories>
       
@@ -77,7 +83,7 @@
       
       <categories>
           
-          <category> 产品 </category>
+          <category> 搞下 PRODUCT </category>
           
       </categories>
       
@@ -102,7 +108,7 @@
       
       <categories>
           
-          <category> 书籍 </category>
+          <category> 读些 BOOK </category>
           
       </categories>
       
@@ -131,7 +137,7 @@
       
       <categories>
           
-          <category> 代码 </category>
+          <category> 写点 BUG </category>
           
       </categories>
       
@@ -154,18 +160,18 @@
       
       <categories>
           
-          <category> 代码 </category>
+          <category> 写点 BUG </category>
           
       </categories>
       
       
         <tags>
             
+            <tag> iOS </tag>
+            
             <tag> 开发者账号 </tag>
             
             <tag> App Store </tag>
-            
-            <tag> iOS </tag>
             
         </tags>
       
