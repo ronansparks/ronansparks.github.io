@@ -45,7 +45,7 @@
     
     <title>
         
-            归档: 2018 | 
+            iOS动画之UIView动画 | 
         
         野猫君の窝
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Be humble">
-    <meta name="keywords" content="iOS Development Design Product Life">
+    <meta name="keywords" content="iOS Development Design Product Life,iOS,animation,uiview">
     <meta name="theme-color" content="#0abab5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -83,6 +83,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -219,7 +222,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="野猫君の窝">
-    <meta name="msapplication-starturl" content="ronansparks.github.io/archives/2018/">
+    <meta name="msapplication-starturl" content="ronansparks.github.io/2018/04/24/iOS动画之UIView动画/">
     <meta name="msapplication-navbutton-color" content="#0abab5">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="野猫君の窝">
@@ -234,13 +237,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="ronansparks.github.io/archives/2018/">
+    <meta property="og:url" content="ronansparks.github.io/2018/04/24/iOS动画之UIView动画/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018 | 野猫君の窝">
+    <meta property="og:title" content="iOS动画之UIView动画 | 野猫君の窝">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Be humble">
-    
+    <meta property="og:article:tag" content="iOS"> <meta property="og:article:tag" content="animation"> <meta property="og:article:tag" content="uiview"> 
 
+    
+        <meta property="article:published_time" content="Tue Apr 24 2018 09:11:43 GMT+0800">
+        <meta property="article:modified_time" content="Wed Apr 25 2018 10:40:40 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -248,13 +254,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="ronansparks.github.io/archives/2018/index.html" />
+        <link rel="canonical" href="ronansparks.github.io/2018/04/24/iOS动画之UIView动画/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "ronansparks.github.io/2018/04/24/iOS动画之UIView动画/index.html",
+    "headline": "iOS动画之UIView动画",
+    "datePublished": "Tue Apr 24 2018 09:11:43 GMT+0800",
+    "dateModified": "Wed Apr 25 2018 10:40:40 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Ronan",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "How do you do"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "野猫君の窝",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",iOS,animation,uiviewiOS Development Design Product Life",
+    "description": "Be humble",
+}
+</script>
 
 
     
@@ -288,481 +324,396 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#内容动画"><span class="post-toc-number">1.</span> <span class="post-toc-text">内容动画</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#属性动画"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">属性动画</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视图控制器动画"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">视图控制器动画</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#物理动画"><span class="post-toc-number">2.</span> <span class="post-toc-text">物理动画</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UIKit动态"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">UIKit动态</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#视差效果"><span class="post-toc-number">3.</span> <span class="post-toc-text">视差效果</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运动效果"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">运动效果</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 16 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/25/整体性学习-《如何高效学习》/">整体性学习 - 《如何高效学习》</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            为什么学了那么多年英语，还停留在“Hello”、“How are you?”阶段？
-为什么在大学里，别人临时抱佛脚，还比你考的分高很多？
-为什么读了那么多书，你却只记得个书名？
-在很多人...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/25/整体性学习-《如何高效学习》/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Ronan's avatar">
-            </div>
-            <div>
-                <strong>Ronan</strong>
-                <span>4月 25, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info" style="margin: 0">
-          
-              <span class="post_entry-category" style="text-align: right; display:block;">
-                  <a class="post_category-link" href="/categories/书籍/">书籍</a>
-              </span>
-              <!-- <span class="post-count" style="color: #dbdbdb">字数统计: 3,098</span> -->
-              <span class="post-count" style="color: #ababab;">阅读时长：11分钟</span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/24/iOS动画之UIView动画/">iOS动画之UIView动画</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言
-对于一个App，能完成基本功能，只能算及格。优秀的交互、视觉能够提升用户体验，够得上优秀。再加上细节、打动人心的动画，就更完美了。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/24/iOS动画之UIView动画/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Ronan's avatar">
-            </div>
-            <div>
-                <strong>Ronan</strong>
-                <span>4月 24, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info" style="margin: 0">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/21/23种设计模式的Swift实现/">23种设计模式的Swift实现</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言：
-在介绍设计模式（Design Pattern）之前，先声明几点，以免大家误入歧途。
-对于设计模式的作用，一直很有争议。有人奉为圭臬，有人嗤之以鼻，他们的认知都...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/21/23种设计模式的Swift实现/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Ronan's avatar">
-            </div>
-            <div>
-                <strong>Ronan</strong>
-                <span>4月 21, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info" style="margin: 0">
-          
-              <span class="post_entry-category" style="text-align: right; display:block;">
-                  <a class="post_category-link" href="/categories/代码/">代码</a>
-              </span>
-              <!-- <span class="post-count" style="color: #dbdbdb">字数统计: 925</span> -->
-              <span class="post-count" style="color: #ababab;">阅读时长：3分钟</span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/19/产品需求-从理解到实施/">产品需求 - 从理解到实施</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            在产品开发过程中，最先要考虑的就是需求，和各部门沟通的也是需求。需求是产品构建的基石，需求制定偏了，整个产品方向也就会偏离预期。
-需求是什么？可以总结为几类？如何收集、筛选、实现需求。
-先放上框架图，...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/19/产品需求-从理解到实施/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Ronan's avatar">
-            </div>
-            <div>
-                <strong>Ronan</strong>
-                <span>4月 19, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info" style="margin: 0">
-          
-              <span class="post_entry-category" style="text-align: right; display:block;">
-                  <a class="post_category-link" href="/categories/产品/">产品</a>
-              </span>
-              <!-- <span class="post-count" style="color: #dbdbdb">字数统计: 840</span> -->
-              <span class="post-count" style="color: #ababab;">阅读时长：3分钟</span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/15/如何打造流行-《引爆点》/">如何打造流行 - 《引爆点》</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            2011年之前，两个朋友网上聊天前，都是A先发送两个字 - “在吗”，有时A还喜欢加个问号”？”，B也要回复“嗯/在/在的”这几个备选词，然后开始瞎扯。大家仿佛都遵从了TCP协议一样。
-这一天，你在某软件上收到一条...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/15/如何打造流行-《引爆点》/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Ronan's avatar">
-            </div>
-            <div>
-                <strong>Ronan</strong>
-                <span>4月 15, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info" style="margin: 0">
-          
-              <span class="post_entry-category" style="text-align: right; display:block;">
-                  <a class="post_category-link" href="/categories/书籍/">书籍</a>
-              </span>
-              <!-- <span class="post-count" style="color: #dbdbdb">字数统计: 1,503</span> -->
-              <span class="post-count" style="color: #ababab;">阅读时长：5分钟</span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/13/iOS多线程的介绍与演示/">iOS多线程的介绍与演示</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本篇文章会简单介绍线程的概念，以及如何区分。接着开始讲解iOS开发中提到的4种方式，不要紧张，最常用的就2种。最后稍微带过下线程安全方面的知识。
-先放出本次内容的框架图，以便有条理的阅读和掌握。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/13/iOS多线程的介绍与演示/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Ronan's avatar">
-            </div>
-            <div>
-                <strong>Ronan</strong>
-                <span>4月 13, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info" style="margin: 0">
-          
-              <span class="post_entry-category" style="text-align: right; display:block;">
-                  <a class="post_category-link" href="/categories/代码/">代码</a>
-              </span>
-              <!-- <span class="post-count" style="color: #dbdbdb">字数统计: 1,554</span> -->
-              <span class="post-count" style="color: #ababab;">阅读时长：6分钟</span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/11/iOS个人开发者账号申请/">iOS个人开发者账号申请</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            今天来手把手讲解一下，申请iOS个人开发者账号的流程。一个从旁观者，到参与者的转变。
-有两个必备条件：
-
-一个Apple ID
-一张Visa / Master的国际信用卡
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/11/iOS个人开发者账号申请/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Ronan's avatar">
-            </div>
-            <div>
-                <strong>Ronan</strong>
-                <span>4月 11, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info" style="margin: 0">
-          
-              <span class="post_entry-category" style="text-align: right; display:block;">
-                  <a class="post_category-link" href="/categories/代码/">代码</a>
-              </span>
-              <!-- <span class="post-count" style="color: #dbdbdb">字数统计: 561</span> -->
-              <span class="post-count" style="color: #ababab;">阅读时长：2分钟</span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 16 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                iOS动画之UIView动画
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Ronan</strong>
+        <span>4月 24, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/animation/">animation</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/iOS/">iOS</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/uiview/">uiview</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2018/04/24/iOS动画之UIView动画/" class="leancloud-views_num" data-flag-title="iOS动画之UIView动画">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS动画之UIView动画&url=ronansparks.github.io/2018/04/24/iOS动画之UIView动画/index.html&pic=ronansparks.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS动画之UIView动画&url=ronansparks.github.io/2018/04/24/iOS动画之UIView动画/index.html&via=Ronan" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=ronansparks.github.io/2018/04/24/iOS动画之UIView动画/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=ronansparks.github.io/2018/04/24/iOS动画之UIView动画/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><strong>前言</strong></p>
+<p>对于一个App，能完成基本功能，只能算及格。优秀的交互、视觉能够提升用户体验，够得上优秀。再加上细节、打动人心的动画，就更完美了。</p>
+<h1 id="内容动画"><a href="#内容动画" class="headerlink" title="内容动画"></a>内容动画</h1><h2 id="属性动画"><a href="#属性动画" class="headerlink" title="属性动画"></a>属性动画</h2><p>通过改变视图（UIView）的属性值来创建动画。</p>
+<p>可以设置的属性有：</p>
+<ol>
+<li>中心坐标（center）</li>
+<li>大小（bounds）</li>
+<li>大小及原点坐标（frame）</li>
+<li>变换（transform）</li>
+<li>透明度（alpha）</li>
+<li>背景色（backgroundColor）</li>
+<li>内容拉伸（contentStretch）</li>
+</ol>
+<p>iOS 4 之后，苹果推荐使用Block动画方法。（iOS 4 之前有种手动开始、结束动画的方法。也就没必要介绍了。）</p>
+<p>使用以下3种Block动画</p>
+<ol>
+<li>普通动画。设置动画时长、动画效果</li>
+</ol>
+<pre><code class="swift">UIView.animate(withDuration: TimeInterval) {
+    //动画        
+}
+</code></pre>
+<ol start="2">
+<li>延时动画。设置动画时长、动画效果、动画完成回调</li>
+</ol>
+<pre><code class="swift">UIView.animate(withDuration: TimeInterval, animations: {
+    //动画
+}) { finishFlag in
+    //动画完成回调        
+}
+</code></pre>
+<ol start="3">
+<li>过渡效果动画。设置动画时长、延迟时间、过渡效果、动画效果、动画完成回调</li>
+</ol>
+<pre><code class="swift">UIView.animate(withDuration: TimeInterval, delay: TimeInterval, options: UIViewAnimationOptions, animations: {
+    //动画        
+}) { finishFlag in
+    //动画完成回调        
+}
+</code></pre>
+<p>UIViewAnimationOptions结构体参数</p>
+<pre><code class="swift">public static var layoutSubviews: UIViewAnimationOptions { get } //动画过程时，布局子控件
+
+public static var allowUserInteraction: UIViewAnimationOptions { get } // 动画过程中，允许用户交互
+
+public static var beginFromCurrentState: UIViewAnimationOptions { get } // 从当前状态开始动画
+
+public static var `repeat`: UIViewAnimationOptions { get } // 无限循环动画
+
+public static var autoreverse: UIViewAnimationOptions { get } // 如果循环动画，往返两个方向进行
+
+public static var overrideInheritedDuration: UIViewAnimationOptions { get } // 忽略方法里动画时长
+
+public static var overrideInheritedCurve: UIViewAnimationOptions { get } // 忽略方法里的曲线设置
+
+public static var allowAnimatedContent: UIViewAnimationOptions { get } // 转场： 动画过程中，重绘视图
+
+public static var showHideTransitionViews: UIViewAnimationOptions { get } // 专场： 翻转到隐藏状态，或者从隐藏状态翻转到显示出来。
+
+public static var overrideInheritedOptions: UIViewAnimationOptions { get } // 不继承父动画的设置
+
+
+public static var curveEaseInOut: UIViewAnimationOptions { get } // 时间曲线，慢进慢出(默认)
+
+public static var curveEaseIn: UIViewAnimationOptions { get } // 时间曲线，慢进
+
+public static var curveEaseOut: UIViewAnimationOptions { get } // 时间曲线，慢出
+
+public static var curveLinear: UIViewAnimationOptions { get } // 时间曲线，匀速进出
+
+
+public static var transitionFlipFromLeft: UIViewAnimationOptions { get } //转场： 从左向右翻页
+
+public static var transitionFlipFromRight: UIViewAnimationOptions { get } //转场： 从右向左翻页
+
+public static var transitionCurlUp: UIViewAnimationOptions { get } //转场： 从下向上卷曲翻页
+
+public static var transitionCurlDown: UIViewAnimationOptions { get } //转场： 从上向下卷曲翻页
+
+public static var transitionCrossDissolve: UIViewAnimationOptions { get } //转场： 交叉消失和出现
+
+public static var transitionFlipFromTop: UIViewAnimationOptions { get } //转场： 从上向下翻页
+
+public static var transitionFlipFromBottom: UIViewAnimationOptions { get } //转场： 从下向上翻页
+
+
+public static var preferredFramesPerSecond60: UIViewAnimationOptions { get } //转场： 帧率60
+
+public static var preferredFramesPerSecond30: UIViewAnimationOptions { get } //转场： 帧率30
+</code></pre>
+<ol start="4">
+<li>弹性动画</li>
+</ol>
+<pre><code class="swift">UIView.animate(withDuration: TimeInterval, delay: TimeInterval, usingSpringWithDamping: CGFloat, initialSpringVelocity: CGFloat, options: UIViewAnimationOptions, animations: {
+    //动画
+}) { finishFlag in
+    //动画完成回调
+}
+</code></pre>
+<ol start="5">
+<li>帧动画</li>
+</ol>
+<pre><code class="swift">UIView.animateKeyframes(withDuration: TimeInterval, delay: TimeInterval, options: UIViewKeyframeAnimationOptions, animations: {
+    //动画        
+}) { finishFlag in
+    //动画完成回调        
+}
+</code></pre>
+<p>UIViewKeyframeAnimationOptions结构体</p>
+<pre><code class="swift">public static var layoutSubviews: UIViewKeyframeAnimationOptions { get }
+
+public static var allowUserInteraction: UIViewKeyframeAnimationOptions { get } // 动画过程中，允许用户交互
+
+public static var beginFromCurrentState: UIViewKeyframeAnimationOptions { get } // 从当前状态开始动画
+
+public static var `repeat`: UIViewKeyframeAnimationOptions { get } // 无限循环动画
+
+public static var autoreverse: UIViewKeyframeAnimationOptions { get } // 如果循环动画，往返两个方向进行
+
+public static var overrideInheritedDuration: UIViewKeyframeAnimationOptions { get } // 忽略方法里动画时长
+
+public static var overrideInheritedOptions: UIViewKeyframeAnimationOptions { get } // 不继承父动画的设置
+
+
+public static var calculationModeLinear: UIViewKeyframeAnimationOptions { get } // 运算模式： 连续
+
+public static var calculationModeDiscrete: UIViewKeyframeAnimationOptions { get } // 运算模式： 离散
+
+public static var calculationModePaced: UIViewKeyframeAnimationOptions { get } // 运算模式： 均匀
+
+public static var calculationModeCubic: UIViewKeyframeAnimationOptions { get } // 运算模式： 平滑
+
+public static var calculationModeCubicPaced: UIViewKeyframeAnimationOptions { get } // 运算模式： 平滑均匀
+</code></pre>
+<h2 id="视图控制器动画"><a href="#视图控制器动画" class="headerlink" title="视图控制器动画"></a>视图控制器动画</h2><p>自定义视图控制器（UIViewController）的转场动画。</p>
+<h1 id="物理动画"><a href="#物理动画" class="headerlink" title="物理动画"></a>物理动画</h1><h2 id="UIKit动态"><a href="#UIKit动态" class="headerlink" title="UIKit动态"></a>UIKit动态</h2><p>给UIView应用真实世界的物理效果。</p>
+<h1 id="视差效果"><a href="#视差效果" class="headerlink" title="视差效果"></a>视差效果</h1><h2 id="运动效果"><a href="#运动效果" class="headerlink" title="运动效果"></a>运动效果</h2><p>给UIView添加微妙的效果，来展现3D效果</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' == true;
+    var verify = 'false' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "jd3RjdaYyr3Mg6wIlEgkkP7Q-gzGzoHsz",
+        appKey: "Mn0YV0jrhVHDnR2hn2fKlGYU",
+        placeholder: "Say something...",
+        pageSize:'10',
+        avatar:'monsterid',
+        lang:'zh-cn'
+    });
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/04/25/整体性学习-《如何高效学习》/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/21/23种设计模式的Swift实现/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -1177,6 +1128,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -1189,6 +1144,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
