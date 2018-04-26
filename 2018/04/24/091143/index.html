@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Be humble">
-    <meta name="keywords" content="iOS Development Design Product Life,iOS,uiview,animation">
+    <meta name="keywords" content="iOS Development Design Product Life,iOS,uiview,animation,keyframe">
     <meta name="theme-color" content="#0abab5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -242,11 +242,11 @@
     <meta property="og:title" content="iOS动画之UIView动画 | 野猫君の窝">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Be humble">
-    <meta property="og:article:tag" content="iOS"> <meta property="og:article:tag" content="uiview"> <meta property="og:article:tag" content="animation"> 
+    <meta property="og:article:tag" content="iOS"> <meta property="og:article:tag" content="uiview"> <meta property="og:article:tag" content="animation"> <meta property="og:article:tag" content="keyframe"> 
 
     
         <meta property="article:published_time" content="Tue Apr 24 2018 09:11:43 GMT+0800">
-        <meta property="article:modified_time" content="Wed Apr 25 2018 21:50:05 GMT+0800">
+        <meta property="article:modified_time" content="Thu Apr 26 2018 12:33:53 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -269,7 +269,7 @@
     "mainEntityOfPage": "ronansparks.github.io/2018/04/24/091143/index.html",
     "headline": "iOS动画之UIView动画",
     "datePublished": "Tue Apr 24 2018 09:11:43 GMT+0800",
-    "dateModified": "Wed Apr 25 2018 21:50:05 GMT+0800",
+    "dateModified": "Thu Apr 26 2018 12:33:53 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Ronan",
@@ -287,7 +287,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",iOS,uiview,animationiOS Development Design Product Life",
+    "keywords": ",iOS,uiview,animation,keyframeiOS Development Design Product Life",
     "description": "Be humble",
 }
 </script>
@@ -353,7 +353,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#内容动画"><span class="post-toc-number">1.</span> <span class="post-toc-text">内容动画</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#属性动画"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">属性动画</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视图控制器动画"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">视图控制器动画</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#物理动画"><span class="post-toc-number">2.</span> <span class="post-toc-text">物理动画</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UIKit动态"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">UIKit动态</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#视差效果"><span class="post-toc-number">3.</span> <span class="post-toc-text">视差效果</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运动效果"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">运动效果</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#属性动画"><span class="post-toc-number">1.</span> <span class="post-toc-text">属性动画</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可设置的属性"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">可设置的属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动画"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">动画</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#动画效果"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">动画效果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#帧动画效果"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">帧动画效果</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#转场动画"><span class="post-toc-number">2.</span> <span class="post-toc-text">转场动画</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单个视图"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">单个视图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从旧视图转到新视图"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">从旧视图转到新视图</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -428,7 +428,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/animation/">animation</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/iOS/">iOS</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/uiview/">uiview</a>
+        <a class="post_tag-link" href="/tags/animation/">animation</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/iOS/">iOS</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/keyframe/">keyframe</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/uiview/">uiview</a>
     </ul>
     
 
@@ -509,28 +509,35 @@
     
         <p><strong>前言</strong></p>
 <p>对于一个App，能完成基本功能，只能算及格。优秀的交互、视觉能够提升用户体验，够得上优秀。再加上细节、打动人心的动画，就更完美了。</p>
-<h1 id="内容动画"><a href="#内容动画" class="headerlink" title="内容动画"></a>内容动画</h1><h2 id="属性动画"><a href="#属性动画" class="headerlink" title="属性动画"></a>属性动画</h2><p>通过改变视图（UIView）的属性值来创建动画。</p>
-<p>可以设置的属性有：</p>
+<p><a href="https://github.com/ronansparks/UIView-Animation.git" target="_blank" rel="noopener">Github下载Demo</a></p>
+<p><em>环境： Swift 4.1  Xcode 9.3</em></p>
+<h1 id="属性动画"><a href="#属性动画" class="headerlink" title="属性动画"></a>属性动画</h1><p>通过改变视图（UIView）的属性值来创建动画。</p>
+<h2 id="可设置的属性"><a href="#可设置的属性" class="headerlink" title="可设置的属性"></a>可设置的属性</h2><p>坐标尺寸类：</p>
 <ol>
-<li>中心坐标（center）</li>
-<li>大小（bounds）</li>
-<li>大小及原点坐标（frame）</li>
-<li>变换（transform）</li>
-<li>透明度（alpha）</li>
-<li>背景色（backgroundColor）</li>
-<li>内容拉伸（contentStretch）</li>
+<li>大小（bounds）：视图会移到新位置，修改尺寸</li>
+<li>中心坐标（center）：视图会移到新位置，修改中心点</li>
+<li>大小及原点坐标（frame）：视图移到新位置，修改尺寸和中心点</li>
 </ol>
-<p>iOS 4 之后，苹果推荐使用Block动画方法。（iOS 4 之前有种手动开始、结束动画的方法。也就没必要介绍了。）</p>
-<p>使用以下3种Block动画</p>
+<p>视图显示类：</p>
 <ol>
-<li>普通动画。设置动画时长、动画效果</li>
+<li>透明度（alpha）：可以产生淡入淡出效果</li>
+<li>背景色（backgroundColor）：可以产生颜色渐变效果</li>
+<li>隐藏（hidden）：可以制作翻页隐藏/显示效果</li>
+</ol>
+<p>形态变化类：</p>
+<ol>
+<li>变换（transform）：可以实现旋转、形变、移动、翻转效果</li>
+</ol>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>iOS 4 之后，苹果推荐使用Block动画方法。（iOS 4 之前有种手动开始、结束动画的方法。也就没必要介绍了。）</p>
+<ol>
+<li>普通动画，没有回调</li>
 </ol>
 <pre><code class="swift">UIView.animate(withDuration: TimeInterval) {
     //动画        
 }
 </code></pre>
 <ol start="2">
-<li>延时动画。设置动画时长、动画效果、动画完成回调</li>
+<li>普通动画</li>
 </ol>
 <pre><code class="swift">UIView.animate(withDuration: TimeInterval, animations: {
     //动画
@@ -539,7 +546,7 @@
 }
 </code></pre>
 <ol start="3">
-<li>过渡效果动画。设置动画时长、延迟时间、过渡效果、动画效果、动画完成回调</li>
+<li>延时动画。还可设置过渡效果</li>
 </ol>
 <pre><code class="swift">UIView.animate(withDuration: TimeInterval, delay: TimeInterval, options: UIViewAnimationOptions, animations: {
     //动画        
@@ -547,58 +554,8 @@
     //动画完成回调        
 }
 </code></pre>
-<p>UIViewAnimationOptions结构体参数</p>
-<pre><code class="swift">public static var layoutSubviews: UIViewAnimationOptions { get } //动画过程时，布局子控件
-
-public static var allowUserInteraction: UIViewAnimationOptions { get } // 动画过程中，允许用户交互
-
-public static var beginFromCurrentState: UIViewAnimationOptions { get } // 从当前状态开始动画
-
-public static var `repeat`: UIViewAnimationOptions { get } // 无限循环动画
-
-public static var autoreverse: UIViewAnimationOptions { get } // 如果循环动画，往返两个方向进行
-
-public static var overrideInheritedDuration: UIViewAnimationOptions { get } // 忽略方法里动画时长
-
-public static var overrideInheritedCurve: UIViewAnimationOptions { get } // 忽略方法里的曲线设置
-
-public static var allowAnimatedContent: UIViewAnimationOptions { get } // 转场： 动画过程中，重绘视图
-
-public static var showHideTransitionViews: UIViewAnimationOptions { get } // 专场： 翻转到隐藏状态，或者从隐藏状态翻转到显示出来。
-
-public static var overrideInheritedOptions: UIViewAnimationOptions { get } // 不继承父动画的设置
-
-
-public static var curveEaseInOut: UIViewAnimationOptions { get } // 时间曲线，慢进慢出(默认)
-
-public static var curveEaseIn: UIViewAnimationOptions { get } // 时间曲线，慢进
-
-public static var curveEaseOut: UIViewAnimationOptions { get } // 时间曲线，慢出
-
-public static var curveLinear: UIViewAnimationOptions { get } // 时间曲线，匀速进出
-
-
-public static var transitionFlipFromLeft: UIViewAnimationOptions { get } //转场： 从左向右翻页
-
-public static var transitionFlipFromRight: UIViewAnimationOptions { get } //转场： 从右向左翻页
-
-public static var transitionCurlUp: UIViewAnimationOptions { get } //转场： 从下向上卷曲翻页
-
-public static var transitionCurlDown: UIViewAnimationOptions { get } //转场： 从上向下卷曲翻页
-
-public static var transitionCrossDissolve: UIViewAnimationOptions { get } //转场： 交叉消失和出现
-
-public static var transitionFlipFromTop: UIViewAnimationOptions { get } //转场： 从上向下翻页
-
-public static var transitionFlipFromBottom: UIViewAnimationOptions { get } //转场： 从下向上翻页
-
-
-public static var preferredFramesPerSecond60: UIViewAnimationOptions { get } //转场： 帧率60
-
-public static var preferredFramesPerSecond30: UIViewAnimationOptions { get } //转场： 帧率30
-</code></pre>
 <ol start="4">
-<li>弹性动画</li>
+<li>弹性动画。还可设置过渡效果、振动效果（0-1）、初始速度</li>
 </ol>
 <pre><code class="swift">UIView.animate(withDuration: TimeInterval, delay: TimeInterval, usingSpringWithDamping: CGFloat, initialSpringVelocity: CGFloat, options: UIViewAnimationOptions, animations: {
     //动画
@@ -607,43 +564,74 @@ public static var preferredFramesPerSecond30: UIViewAnimationOptions { get } //�
 }
 </code></pre>
 <ol start="5">
-<li>帧动画</li>
+<li>帧动画。设置动画时长、延迟时间、过渡效果</li>
 </ol>
 <pre><code class="swift">UIView.animateKeyframes(withDuration: TimeInterval, delay: TimeInterval, options: UIViewKeyframeAnimationOptions, animations: {
-    //动画        
+    //添加关键帧。从0开始，时长为 总时长 x 0.2
+    UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
+
+    })
+    //添加关键帧。从总时长 x 0.2开始，时长为 总时长 x 0.3
+    UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.3, animations: {
+
+    })
+    //添加关键帧。从总时长 x 0.2开始，时长为 总时长 x 0.5
+    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+
+    })
 }) { finishFlag in
     //动画完成回调        
 }
 </code></pre>
-<p>UIViewKeyframeAnimationOptions结构体</p>
-<pre><code class="swift">public static var layoutSubviews: UIViewKeyframeAnimationOptions { get }
-
-public static var allowUserInteraction: UIViewKeyframeAnimationOptions { get } // 动画过程中，允许用户交互
-
-public static var beginFromCurrentState: UIViewKeyframeAnimationOptions { get } // 从当前状态开始动画
-
-public static var `repeat`: UIViewKeyframeAnimationOptions { get } // 无限循环动画
-
-public static var autoreverse: UIViewKeyframeAnimationOptions { get } // 如果循环动画，往返两个方向进行
-
-public static var overrideInheritedDuration: UIViewKeyframeAnimationOptions { get } // 忽略方法里动画时长
-
-public static var overrideInheritedOptions: UIViewKeyframeAnimationOptions { get } // 不继承父动画的设置
-
-
-public static var calculationModeLinear: UIViewKeyframeAnimationOptions { get } // 运算模式： 连续
-
-public static var calculationModeDiscrete: UIViewKeyframeAnimationOptions { get } // 运算模式： 离散
-
-public static var calculationModePaced: UIViewKeyframeAnimationOptions { get } // 运算模式： 均匀
-
-public static var calculationModeCubic: UIViewKeyframeAnimationOptions { get } // 运算模式： 平滑
-
-public static var calculationModeCubicPaced: UIViewKeyframeAnimationOptions { get } // 运算模式： 平滑均匀
+<h3 id="动画效果"><a href="#动画效果" class="headerlink" title="动画效果"></a>动画效果</h3><p>这里只列举写常用的效果，更多参数见开发文档。</p>
+<p>循环参数：</p>
+<ul>
+<li>repeat：无限循环</li>
+<li>autoreverse：动画完成后，再往反方向进行一次</li>
+</ul>
+<p>速度参数：</p>
+<ul>
+<li>curveLinear：匀速</li>
+<li>curveEaseIn：加速</li>
+<li>curveEaseOut：减速</li>
+<li>curveEaseInOut：先加速、后减速</li>
+</ul>
+<p>转场参数：</p>
+<ul>
+<li>transitionFlipFromLeft：从左翻转</li>
+<li>transitionFlipFromRight：从右翻转</li>
+<li>transitionFlipFromTop：从上翻转</li>
+<li>transitionFlipFromBottom：从下翻转</li>
+<li>transitionCurlUp：从上卷曲翻页</li>
+<li>transitionCurlDown：从下卷曲翻页</li>
+<li>transitionCrossDissolve：旧视图溶解过渡</li>
+</ul>
+<h3 id="帧动画效果"><a href="#帧动画效果" class="headerlink" title="帧动画效果"></a>帧动画效果</h3><p>这里只列举写常用的效果，更多参数见开发文档。</p>
+<p>循环参数：</p>
+<ul>
+<li>repeat：无限循环</li>
+<li>autoreverse：动画完成后，再往反方向进行一次</li>
+</ul>
+<p>运算模式参数：</p>
+<ul>
+<li>calculationModeLinear：连续</li>
+<li>calculationModeDiscrete：离散</li>
+<li>calculationModePaced：均匀</li>
+<li>calculationModeCubic：平滑</li>
+<li>calculationModeCubicPaced：平滑均匀</li>
+</ul>
+<img src="/2018/04/24/091143/01_Keyframe.png">
+<h1 id="转场动画"><a href="#转场动画" class="headerlink" title="转场动画"></a>转场动画</h1><h2 id="单个视图"><a href="#单个视图" class="headerlink" title="单个视图"></a>单个视图</h2><pre><code class="swift">UIView.transition(with: UIView, duration: TimeInterval, options: UIViewAnimationOptions, animations: {
+    //动画
+}) { isFinished in
+    //动画完成回调   
+}
 </code></pre>
-<h2 id="视图控制器动画"><a href="#视图控制器动画" class="headerlink" title="视图控制器动画"></a>视图控制器动画</h2><p>自定义视图控制器（UIViewController）的转场动画。</p>
-<h1 id="物理动画"><a href="#物理动画" class="headerlink" title="物理动画"></a>物理动画</h1><h2 id="UIKit动态"><a href="#UIKit动态" class="headerlink" title="UIKit动态"></a>UIKit动态</h2><p>给UIView应用真实世界的物理效果。</p>
-<h1 id="视差效果"><a href="#视差效果" class="headerlink" title="视差效果"></a>视差效果</h1><h2 id="运动效果"><a href="#运动效果" class="headerlink" title="运动效果"></a>运动效果</h2><p>给UIView添加微妙的效果，来展现3D效果</p>
+<h2 id="从旧视图转到新视图"><a href="#从旧视图转到新视图" class="headerlink" title="从旧视图转到新视图"></a>从旧视图转到新视图</h2><pre><code class="swift">//第一个view是旧视图、第二个view是新视图
+UIView.transition(from: UIView, to: UIView, duration: TimeInterval, options: UIViewAnimationOptions) { isFinished in
+    //动画回调
+}
+</code></pre>
 
         
     
