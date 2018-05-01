@@ -246,7 +246,7 @@
 
     
         <meta property="article:published_time" content="Sat Apr 21 2018 20:43:03 GMT+0800">
-        <meta property="article:modified_time" content="Wed Apr 25 2018 21:49:48 GMT+0800">
+        <meta property="article:modified_time" content="Thu Apr 26 2018 16:12:03 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -269,7 +269,7 @@
     "mainEntityOfPage": "ronansparks.github.io/2018/04/21/204303/index.html",
     "headline": "23种设计模式的Swift实现",
     "datePublished": "Sat Apr 21 2018 20:43:03 GMT+0800",
-    "dateModified": "Wed Apr 25 2018 21:49:48 GMT+0800",
+    "dateModified": "Thu Apr 26 2018 16:12:03 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Ronan",
@@ -519,8 +519,18 @@
 <img src="/2018/04/21/204303/01_23种设计模式.png">
 <p><em>环境： Swift 4.1  Xcode 9.3</em></p>
 <h1 id="创建型"><a href="#创建型" class="headerlink" title="创建型"></a>创建型</h1><p>提供了一种在创建实例的同时，隐藏创建逻辑的方式。灵活选择要创建的实例。</p>
-<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>在App整个生命周期里，保证一个类只初始化一次，并提供一个类型方法可以访问这个实例。</p>
-<p><em>如系统UIApplication的sharedApplication</em></p>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>单例模式确保一个类只能有一个实例。所有对该类对象的引用，都通过这个实例来完成。</p>
+<pre><code class="swift">class DeathStarSuperlaser {
+    static let sharedInstance = DeathStarSuperlaser()
+
+    private init() {
+        // 私有初始化，确保只有一个实例
+    }
+}
+
+// 使用
+let laser = DeathStarSuperlaser.sharedInstance
+</code></pre>
 <h2 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h2><p>通过拷贝已有实例，来创建新的实例。</p>
 <p><em>当已创建的实例复杂且耗时，或者新实例属性值与已有实例的属性值有很多重叠</em></p>
 <h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p>定义一个基类/协议，多个子类继承它，创建一个工厂类型，根据传入的参数来创建对应的子类。这样就对外界隐藏子类创建逻辑。</p>
