@@ -1,0 +1,25 @@
+#wrapper {
+    background-color: red;
+}
+
+#header {
+    background-color: green;
+}
+
+#main {
+    width: 100%;
+    background-color: blue;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.thumb {
+    width: 25%;
+    height: 300px;
+    align-items: center;
+}
+
+
+.thumb h2 {
+    font-size: 20px;
+}
