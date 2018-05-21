@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>管理iOS应用的生命周期</title>
+      <link href="/2018/05/17/205301/"/>
+      <url>/2018/05/17/205301/</url>
+      <content type="html"><![CDATA[<p>本篇文章帮助理解iOS应用生命周期，和如何通过应用委托（app delegate）管理应用的上层行为。</p><p>UIKit应用总是处于以下五个状态之一：</p><ul><li>未运行状态（Not Running ）：应用未启动，或者已被系统终止。</li><li>不活跃状态（Inactive）：应用刚启动，进入活跃状态前的短暂状态。</li><li>活跃状态（Active）：应用正在屏幕上运行，接收事件。处于这个状态时的应用也被称为前台应用。</li><li>后台状态（Background）：应用在后台运行，还可以执行代码。</li><li>挂起状态（Suspend）：应用在后台，已停止运行代码。收到系统内存警告时，系统将终止处于此状态的应用。</li></ul><div align="center"><br><br><img src="/2018/05/17/205301/01_app_life_circle.png"><br><br></div><h1 id="管理生命周期事件"><a href="#管理生命周期事件" class="headerlink" title="管理生命周期事件"></a>管理生命周期事件</h1><p>当应用从一个状态过渡到另一个状态的时候，UIKit通知应用的应用委托对象（ 即一个遵守了<strong>UIApplicationDelegate</strong> 协议的对象，通常是创建项目时自带的AppDelegate.swift文件）。使用应用委托调整应用行为到对应的最新状态。</p><p>系统会通知应用委托以下过渡：</p><h2 id="启动（Launch）"><a href="#启动（Launch）" class="headerlink" title="启动（Launch）"></a>启动（Launch）</h2><p>应用从未运行状态过渡到不活跃，或者过渡到后台状态。为应用的运行做准备。</p><p>应用会自动初始化视图和视图控制器，开启应用的主事件循环（loop）。</p><p>使用<code>application(_:willFinishLaunchingWithOptions:)</code> 初始化数据结构；执行只需配置一次的任务。</p><p>使用<code>application(_:didFinishLaunchingWithOptions:)</code> 校验内容；更新应用的默认UI；开始连接网络等任务。</p><h2 id="活化（Activation）"><a href="#活化（Activation）" class="headerlink" title="活化（Activation）"></a>活化（Activation）</h2><p>应用从不活跃状态过渡到活跃状态。为应用在前台运行和在屏幕可见时做准备。</p><p>应用刚启动时，系统调用应用委托的<code>applicationDidBecomeActive(_:)</code> 方法告诉你应用处于活跃状态；</p><p>应用已经在后台运行，系统会先调用<code>applicationWillEnterForeground(_:)</code> 方法，再调用<code>applicationDidBecomeActive(_:)</code> 方法。</p><p>可以开始或恢复用来执行任务的线程队列；改变UI；开启定时器。</p><p>系统随后通知视图控制器的<code>viewWillAppear(_:)</code> 方法时，用以更新视图内容；</p><p>系统随后通知视图控制器的<code>viewDidAppear(_:)</code> 方法时，用以开启动画；开始设置为自动播放的媒体文件；开始以全帧率更新游戏或沉浸式内容。</p><h2 id="钝化（Deactivation）"><a href="#钝化（Deactivation）" class="headerlink" title="钝化（Deactivation）"></a>钝化（Deactivation）</h2><p>在应用从前台过渡到后台前，从活跃状态过渡到不活跃状态，短暂或长时间使应用静音。</p><p>系统调用 <code>applicationWillResignActive(_:)</code> ，用以保存用户数据到磁盘并关闭打开的文件；只执行对于保存用户数据至关重要的任务；停止计时器；暂停游戏。</p><h2 id="后台执行（Background-execution）"><a href="#后台执行（Background-execution）" class="headerlink" title="后台执行（Background execution）"></a>后台执行（Background execution）</h2><p>当用户切换到其他应用，或者回到桌面时，应用过渡到后台状态。只用来处理与界面无关的重要任务。</p><p>系统调用<code>applicationDidEnterBackground(_:)</code> 用以清理应用的UI（如隐藏敏感数据、取消弹窗和其他临时界面）；取消注册Bonjour并关闭socket通信；释放图片、媒体文件、临时对象。</p><h2 id="终止（Termination）"><a href="#终止（Termination）" class="headerlink" title="终止（Termination）"></a>终止（Termination）</h2><p>应用会从任何状态过渡到未运行状态。（例外：被挂起的应用被终止时，不会收到通知）。用来取消所有任务并准备退出。</p><p>系统调用<code>applicationWillTerminate(_ application: UIApplication)</code> 大概有5秒的时间，用以执行最终的清理任务，如释放共享资源，保存用户数据，停止计时器。</p><h1 id="管理行为事件"><a href="#管理行为事件" class="headerlink" title="管理行为事件"></a>管理行为事件</h1><p>应用委托也响应其他重要的事件：</p><ul><li>内存警告：减少应用使用的内存</li><li>时间改变：更新应用中与时间紧密相关的功能</li><li>受保护的数据变为可用/不可用：当用户锁屏/解锁设备的时候，管理文件</li><li>状态恢复：恢复应用UI为用户离开应用时的状态，表现的像是应用一直在运行。</li><li>无缝转接任务：换在其他设备上继续当前任务</li><li>开放链接：接收并打开收到的URL</li><li>应用间通信：从已配对的手表应用中接收数据</li><li>文件下载：使用<strong>URLSession</strong>对象接收应用下载的文件</li></ul><p>虽然大部分的应用生命周期事件都在应用委托中处理，但也可以在其他地方处理。大部分的事件，UIKit也会生成可被监听的通知。具体的可被监听的通知列表见<a href="https://developer.apple.com/documentation/uikit/uiapplication" target="_blank" rel="noopener">UIApplication</a>；更多关于处理事件的方法见<a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate" target="_blank" rel="noopener">UIApplicationDelegate</a>。</p>]]></content>
+      
+      <categories>
+          
+          <category> 程序开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> iOS </tag>
+            
+            <tag> 生命周期 </tag>
+            
+            <tag> 应用委托 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>产品设计从0到1 - 《用户体验要素》</title>
       <link href="/2018/05/16/171346/"/>
       <url>/2018/05/16/171346/</url>
@@ -17,11 +42,11 @@
       
         <tags>
             
-            <tag> 产品 </tag>
-            
             <tag> 用户体验 </tag>
             
             <tag> 产品设计 </tag>
+            
+            <tag> 产品 </tag>
             
             <tag> 战略层 </tag>
             
@@ -116,17 +141,17 @@
       
         <tags>
             
+            <tag> 用户体验 </tag>
+            
             <tag> 产品 </tag>
             
             <tag> 创意 </tag>
             
             <tag> 自传播 </tag>
             
-            <tag> 社交 </tag>
-            
-            <tag> 用户体验 </tag>
-            
             <tag> 自然增长 </tag>
+            
+            <tag> 社交 </tag>
             
         </tags>
       
@@ -178,9 +203,9 @@
             
             <tag> uiview </tag>
             
-            <tag> keyframe </tag>
-            
             <tag> 动画 </tag>
+            
+            <tag> keyframe </tag>
             
         </tags>
       
@@ -228,13 +253,13 @@
       
         <tags>
             
+            <tag> 产品 </tag>
+            
             <tag> 引爆点 </tag>
             
             <tag> 传播 </tag>
             
             <tag> 心理学 </tag>
-            
-            <tag> 产品 </tag>
             
             <tag> 商业 </tag>
             
@@ -280,11 +305,11 @@
       
         <tags>
             
+            <tag> iOS </tag>
+            
             <tag> 开发者账号 </tag>
             
             <tag> App Store </tag>
-            
-            <tag> iOS </tag>
             
         </tags>
       
