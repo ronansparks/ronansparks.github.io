@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            详解UIView之容器视图与控件 | 
+        
+        野猫君の窝
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="Be humble">
+    <meta name="keywords" content="iOS Development Design Product Life,iOS,UIView,UIStackView,UITableView,UICollectionView,UIControl">
+    <meta name="theme-color" content="#0abab5">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0abab5 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0abab5 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0abab5 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="野猫君の窝">
+    <meta name="msapplication-starturl" content="ronansparks.github.io/2018/05/21/222410/">
+    <meta name="msapplication-navbutton-color" content="#0abab5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="野猫君の窝">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="ronansparks.github.io/2018/05/21/222410/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="详解UIView之容器视图与控件 | 野猫君の窝">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="Be humble">
+    <meta property="og:article:tag" content="iOS"> <meta property="og:article:tag" content="UIView"> <meta property="og:article:tag" content="UIStackView"> <meta property="og:article:tag" content="UITableView"> <meta property="og:article:tag" content="UICollectionView"> <meta property="og:article:tag" content="UIControl"> 
+
+    
+        <meta property="article:published_time" content="Mon May 21 2018 22:24:10 GMT+0800">
+        <meta property="article:modified_time" content="Tue May 22 2018 18:41:28 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="ronansparks.github.io/2018/05/21/222410/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "ronansparks.github.io/2018/05/21/222410/index.html",
+    "headline": "详解UIView之容器视图与控件",
+    "datePublished": "Mon May 21 2018 22:24:10 GMT+0800",
+    "dateModified": "Tue May 22 2018 18:41:28 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Ronan",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "How do you do"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "野猫君の窝",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",iOS,UIView,UIStackView,UITableView,UICollectionView,UIControliOS Development Design Product Life",
+    "description": "Be humble",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#视图容器"><span class="post-toc-number">1.</span> <span class="post-toc-text">视图容器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UIStackView"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">UIStackView</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UIScrollView"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">UIScrollView</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UITableView"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">UITableView</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UICollectionView"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">UICollectionView</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#控件"><span class="post-toc-number">2.</span> <span class="post-toc-text">控件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UIControl"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">UIControl</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UIButton"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">UIButton</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UIDatePicker"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">UIDatePicker</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UIPageControl"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">UIPageControl</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UISegmentedControl"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">UISegmentedControl</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UISlider"><span class="post-toc-number">2.1.5.</span> <span class="post-toc-text">UISlider</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UIStepper"><span class="post-toc-number">2.1.6.</span> <span class="post-toc-text">UIStepper</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UISwitch"><span class="post-toc-number">2.1.7.</span> <span class="post-toc-text">UISwitch</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 27 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                详解UIView之容器视图与控件
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Ronan</strong>
+        <span>5月 21, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/UICollectionView/">UICollectionView</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/UIControl/">UIControl</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/UIStackView/">UIStackView</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/UITableView/">UITableView</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/UIView/">UIView</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/iOS/">iOS</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2018/05/21/222410/" class="leancloud-views_num" data-flag-title="详解UIView之容器视图与控件">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=详解UIView之容器视图与控件&url=ronansparks.github.io/2018/05/21/222410/index.html&pic=ronansparks.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=详解UIView之容器视图与控件&url=ronansparks.github.io/2018/05/21/222410/index.html&via=Ronan" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=ronansparks.github.io/2018/05/21/222410/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=ronansparks.github.io/2018/05/21/222410/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>UIKit 作为 iOS 开发中最常用也最重要的框架，不得不花些时间细细琢磨。而其中的UIView负责呈现应用内容和与内容的交互。</p>
+<p>视图和控件是与应用 UI 的视觉模块。使用它们来绘制和组织应用内容在屏幕上的显示。</p>
+<p>视图的作用：</p>
+<ul>
+<li>作为其他视图的父容器</li>
+<li>响应触摸和其他手势操作</li>
+<li>使用 Core Graphics 或 UIKit 类绘制自定义的内容</li>
+<li>支持拖拽操作</li>
+<li>响应焦点改变</li>
+<li>为视图的尺寸，位置，外观属性添加动画</li>
+</ul>
+<p><strong>UIView</strong> 是所有视图的根类，并且定义了通用的行为。</p>
+<p><strong>UIControl</strong> 定义了额外的行为来响应用户交互，它也是继承自 UIView 的。</p>
+<p>两篇文章将介绍 UIView 和它的子类们。这次先详细解析下<strong>容器视图</strong>和<strong>控件</strong>。</p>
+<h1 id="视图容器"><a href="#视图容器" class="headerlink" title="视图容器"></a>视图容器</h1><h2 id="UIStackView"><a href="#UIStackView" class="headerlink" title="UIStackView"></a>UIStackView</h2><p>UIStackView 是 iOS 9 引入的视图容器，可直接从 Object library 里拖到 storyboard 上使用。将一组子视图布局到一行或一列上，能动态地适应设备旋转、屏幕大小、可用空间的改变。只要定义了 StackView 的位置和尺寸（可选），它会自动调整子视图的布局和尺寸。</p>
+<center><img src="/2018/05/21/222410/01_stackView.jpg"></center>
+
+<p>UIStackView 有四个重要的属性：axis、alignment、distribution、spacing</p>
+<ol>
+<li>axis</li>
+</ol>
+<pre><code class="swift">public enum UILayoutConstraintAxis : Int {
+
+    case horizontal // 水平排列子视图
+    case vertical // 竖直排列子视图
+}
+</code></pre>
+<ol start="2">
+<li>alignment</li>
+</ol>
+<pre><code class="swift">public enum UIStackViewAlignment : Int {
+
+    // 适用于竖直、水平方向
+    case fill // 子视图填充满 StackView
+    case center // 子视图居中对齐
+
+    // 仅适用于竖直 axis
+    case leading // 子视图左对齐
+    case trailing // 子视图右对齐
+
+    // 仅适用于水平 axis
+    public static var top: UIStackViewAlignment { get } // 子视图与 StackView 顶部对齐
+    public static var bottom: UIStackViewAlignment { get } // 子视图与 StackView 底部对齐
+
+    case firstBaseline // 对齐第一个子视图顶部
+    case lastBaseline // 对齐最后一个子视图底部
+}
+</code></pre>
+<ol start="3">
+<li>distribution</li>
+</ol>
+<pre><code class="swift">public enum UIStackViewDistribution : Int {
+
+    /* 轴方向上填充子视图 (默认属性) 
+     有一个子视图时，子视图轴方向尺寸填满 StackView
+     有多个优先级相同子视图时，拉伸其中一个子视图，填满 StackView
+     有多个优先级不同子视图时，按优先级从高到低设置子视图尺寸，最后被设置的子视图可能被拉伸或压缩
+    */
+    case fill // (默认属性)
+
+    /* 轴方向上，子视图尺寸相同
+     如在水平方向上，多个子视图宽度相同
+     */
+    case fillEqually
+
+    // 轴方向上，子视图尺寸按原先比例，拉伸或压缩
+    case fillProportionally
+
+    /* 轴方向上，子视图之间的间距相同
+     保持子视图原有尺寸，剩下的间距空间均分
+     */
+    case equalSpacing
+
+    // 轴方向上，子视图中心点间距离相同
+    case equalCentering
+}
+</code></pre>
+<ol start="4">
+<li>spacing</li>
+</ol>
+<p>设置 distribution 为其前三个属性时，子视图之间没有间距，可以用 spacing 属性设置。</p>
+<h2 id="UIScrollView"><a href="#UIScrollView" class="headerlink" title="UIScrollView"></a>UIScrollView</h2><p>滚动视图使得它所包含的内容视图可以滚动和缩放。它是 UITableView、UICollectionView、UITextView 的父类。</p>
+<p>滚动视图只绘制其水平或竖直滚动条。</p>
+<ol>
+<li>滚动功能</li>
+</ol>
+<p>滚动视图需要知道内容视图的尺寸来判断什么时候停止滚动；当滚动超出内容的边界，它会自动弹回边界内。</p>
+<pre><code class="swift">    open var contentOffset: CGPoint // 设置内容滚动的位置
+
+    open var contentSize: CGSize // 设置可以滚动的范围，一般为子视图的尺寸
+    open var contentInset: UIEdgeInsets // 给滚动内容四周增加滚动的范围
+
+    weak open var delegate: UIScrollViewDelegate? // 滚动委托
+
+    open var bounces: Bool // 默认为 true。设置 true，当滚动出边界时，有弹回来的弹簧效果
+    open var alwaysBounceVertical: Bool // 默认为 false。设置为 true，总是有弹簧效果（下拉刷新）
+    open var alwaysBounceHorizontal: Bool // 默认为 false。设置为 true，总是有弹簧效果
+
+    open var isPagingEnabled: Bool // 默认为 false。设置分页效果
+
+    open var isScrollEnabled: Bool // 默认为 true。可选择临时关闭滚动
+    open var isDirectionalLockEnabled: Bool // 默认为 false。设置true可以限制仅水平或竖直滚动
+    open var showsHorizontalScrollIndicator: Bool // 默认为 true。设置是否显示水平滚动条
+    open var showsVerticalScrollIndicator: Bool // 默认为 true。设置是否显示竖直滚动条
+    open var scrollIndicatorInsets: UIEdgeInsets // 默认为 0。调节指示器距离边缘的距离
+    open var indicatorStyle: UIScrollViewIndicatorStyle // 默认是黑色填充 + 白色边框，适合任何背景。还可设置纯黑、纯白
+
+    open var decelerationRate: CGFloat // 设置滚动的减速速度
+    open var indexDisplayMode: UIScrollViewIndexDisplayMode // 在 Apple tv 上使用的索引显示模式
+    open var isTracking: Bool { get } // 监控目标是否正在被追踪
+    open var isDragging: Bool { get } // 监控目标是否正在被拖拽
+    open var isDecelerating: Bool { get } // 监控目标是否正在减速
+    open var delaysContentTouches: Bool // 默认为 true。控制是否延时调用开始滚动的方法
+
+    open var canCancelContentTouches: Bool // 默认为 true。控制是否取消 touch 事件
+</code></pre>
+<ol start="2">
+<li>缩放功能</li>
+</ol>
+<p>为了实现缩放，需要继承 <code>UIScrollViewDelegate</code> 协议，实现 <code>viewForZooming(in:)</code> 方法返回被缩放的视图，并且最大和最小缩放因子不能相同。</p>
+<pre><code class="swift">    open var minimumZoomScale: CGFloat // 默认为 1.0
+    open var maximumZoomScale: CGFloat // 默认为 1.0。若要实现缩放，必须大于 minimumZoomScale
+
+    open var zoomScale: CGFloat // 默认为 1.0。设置缩放变化比例
+    open var bouncesZoom: Bool // 默认为 true。控制缩放的时候是否会反弹
+    open var isZooming: Bool { get } // 判断控件是否正在缩放
+    open var isZoomBouncing: Bool { get } // 判断控件是否正在缩放反弹
+</code></pre>
+<ol start="3">
+<li>其他功能</li>
+</ol>
+<pre><code class="swift">    open var scrollsToTop: Bool // 点击屏幕状态栏回到页面顶部
+
+    open var keyboardDismissMode: UIScrollViewKeyboardDismissMode // 与输入框相关。可设置拖动时收起键盘，也可设置拖动停止时恢复键盘
+
+    @available(iOS 10.0, *)
+    open var refreshControl: UIRefreshControl? // 自带刷新按钮，下拉即可出现刷新控件
+</code></pre>
+<h3 id="UITableView"><a href="#UITableView" class="headerlink" title="UITableView"></a>UITableView</h3><p>表视图用于展示多行数据到一个列表中。</p>
+<p>表视图可以有零个或多个区域（section），拥有各自的行（row）。任何区域都可以拥有自己的区域页头（section header）和区域页脚（section footer）。</p>
+<p>表视图有 plain 和 grouped 两种样式。前者可以设置从 A 到 Z 的快速索引，放置在列表的右侧。</p>
+<center><img src="/2018/05/21/222410/02_tableView.jpg"></center>
+
+<p>使用表视图，必须包含数据源和委托。前者需要继承 UITableViewDataSource 协议，提供添加、删除、重排序所需要的数据模型；后者需要继承 UITableViewDelegate 协议，处理选中、重排序、高亮、编辑操作。</p>
+<ol>
+<li>表视图数据源和外观</li>
+</ol>
+<pre><code class="swift">    open var style: UITableViewStyle { get }
+
+    weak open var dataSource: UITableViewDataSource? // 数据源
+
+    weak open var delegate: UITableViewDelegate? // 委托
+
+    @available(iOS 10.0, *)
+    weak open var prefetchDataSource: UITableViewDataSourcePrefetching? // 在 cell 渲染在屏幕之前，提前获取数据
+
+     /*
+     用于 iPad，将文件从一个应用拖到其他应用
+    */
+    @available(iOS 11.0, *)
+    weak open var dragDelegate: UITableViewDragDelegate?
+    @available(iOS 11.0, *)
+    weak open var dropDelegate: UITableViewDropDelegate?
+
+    open var rowHeight: CGFloat // 行高
+    open var sectionHeaderHeight: CGFloat // 区域页头高度
+    open var sectionFooterHeight: CGFloat // 区域页脚高度
+
+    open var estimatedRowHeight: CGFloat // 估算行高
+    open var estimatedSectionHeaderHeight: CGFloat // 估算区域页头高度
+    open var estimatedSectionFooterHeight: CGFloat // 估算区域页脚高度
+
+    open var separatorInset: UIEdgeInsets // 自定义 cell 分割线的尺寸。
+    open var separatorInsetReference: UITableViewSeparatorInsetReference // 设置 separatorInset 属性的参照值
+
+    @available(iOS 3.2, *)
+    open var backgroundView: UIView? // 背景视图
+</code></pre>
+<ol start="2">
+<li>信息</li>
+</ol>
+<pre><code class="swift">    open var numberOfSections: Int { get } // 有多少区域
+    open var visibleCells: [UITableViewCell] { get } // 在屏幕上可见的单元格
+    open var indexPathsForVisibleRows: [IndexPath]? { get } // 可见单元格的 IndexPath
+</code></pre>
+<ol start="3">
+<li>编辑和选中</li>
+</ol>
+<pre><code class="swift">    open var isEditing: Bool // 默认是false
+    open var allowsSelection: Bool // 设置单元格是否可选
+    open var allowsSelectionDuringEditing: Bool // 默认是false，设置编辑模式下，单元格是否可选
+    open var allowsMultipleSelection: Bool // 设置单元格是否可多选
+    open var allowsMultipleSelectionDuringEditing: Bool // 设置在编辑模式下，单元格是否可多选
+
+    open var indexPathForSelectedRow: IndexPath? { get } // 返回对应 IndexPath 或 nil
+    open var indexPathsForSelectedRows: [IndexPath]? { get } // 返回对应的多个 IndexPath 或 nil
+</code></pre>
+<ol start="4">
+<li>外观</li>
+</ol>
+<pre><code class="swift">    open var sectionIndexMinimumDisplayRowCount: Int // 设置该 section 有多少行单元格才显示索引
+    open var sectionIndexColor: UIColor? // 索引的字体颜色
+    open var sectionIndexBackgroundColor: UIColor? // 索引的背景颜色
+    open var sectionIndexTrackingBackgroundColor: UIColor? // 索引被触摸时候的背景颜色
+
+    open var separatorStyle: UITableViewCellSeparatorStyle // 分割线样式
+    open var separatorColor: UIColor? // 分割线颜色
+
+    @NSCopying open var separatorEffect: UIVisualEffect? // 分割线视觉效果
+    open var cellLayoutMarginsFollowReadableWidth: Bool // 针对 iPad，不设置会导致左侧边距很大
+
+    @available(iOS 11.0, *)
+    open var insetsContentViewsToSafeArea: Bool // 默认为true，设置 iPhone X 安全区域
+
+    open var tableHeaderView: UIView? // 表页头视图
+    open var tableFooterView: UIView? // 表页脚视图
+</code></pre>
+<h3 id="UICollectionView"><a href="#UICollectionView" class="headerlink" title="UICollectionView"></a>UICollectionView</h3><p>使用自定义布局，管理和呈现一组有序的数据集合。</p>
+<p>集合视图从继承了 UICollectionViewDataSource Protocol 协议的对象中获取数据，每一条数据就是一个最小的独立的单元，可以把多个单元编组。集合视图在屏幕上呈现单元，每一个单元都是 UICollectionViewCell 的实例。</p>
+<center><img src="/2018/05/21/222410/03_collectionView.png"></center>
+
+<p>集合视图与布局对象：</p>
+<p>布局对象是 UICollectionViewLayout 类的子类，负责定义单元和页头/页脚的组织和位置的信息，由集合视图处理这些信息。</p>
+<ol>
+<li>集合视图数据源</li>
+</ol>
+<pre><code class="swift">    open var collectionViewLayout: UICollectionViewLayout // 布局对象
+    weak open var dataSource: UICollectionViewDataSource? // 数据源
+    weak open var delegate: UICollectionViewDelegate? // 操作委托
+
+    @available(iOS 10.0, *)
+    weak open var prefetchDataSource: UICollectionViewDataSourcePrefetching? //在 cell 渲染在屏幕之前，提前获取数据
+    open var isPrefetchingEnabled: Bool //设置提前渲染，是否可用
+
+    // 用于 iPad，处理拖拽
+    @available(iOS 11.0, *)
+    weak open var dragDelegate: UICollectionViewDragDelegate?
+    weak open var dropDelegate: UICollectionViewDropDelegate?
+    open var dragInteractionEnabled: Bool // 在 iPhone 上默认是false，可开启。
+    open var reorderingCadence: UICollectionViewReorderingCadence // 调节集合视图重排序的响应性
+
+    open var backgroundView: UIView? // 作为单元和页头/页脚视图的背景视图
+</code></pre>
+<ol start="2">
+<li>信息</li>
+</ol>
+<pre><code class="swift">    open var numberOfSections: Int { get } // 有多少区域
+    open var visibleCells: [UICollectionViewCell] { get } // 有多少屏幕上可见的单元
+    open var indexPathsForVisibleItems: [IndexPath] { get } // 可见的单元对应的 IndexPath
+</code></pre>
+<ol start="3">
+<li>编辑</li>
+</ol>
+<pre><code class="swift">    open var allowsSelection: Bool // 默认可选
+
+    open var allowsMultipleSelection: Bool // 默认不可多选
+
+    open var indexPathsForSelectedItems: [IndexPath]? { get } // 返回选中的 IndexPath 或 nil
+
+    @available(iOS 11.0, *)
+    open var hasUncommittedUpdates: Bool { get } // 判断当前集合视图是否存在 placeholder
+</code></pre>
+<h1 id="控件"><a href="#控件" class="headerlink" title="控件"></a>控件</h1><h2 id="UIControl"><a href="#UIControl" class="headerlink" title="UIControl"></a>UIControl</h2><p>UIControl 类是控件的基类，在响应用户的交互时的动作或意图。</p>
+<p>控件使用 Target-Action 机制向应用报告用户的交互，三种形式如下：</p>
+<pre><code class="swift">@IBAction func doSomething()
+@IBAction func doSomething(sender: UIButton)
+@IBAction func doSomething(sender: UIButton, forEvent event: UIEvent)
+</code></pre>
+<p>基本属性</p>
+<pre><code class="swift">    open var isEnabled: Bool // 默认为可用
+    open var isSelected: Bool // 默认不可选
+    open var isHighlighted: Bool // 默认非高亮状态
+
+    open var contentVerticalAlignment: UIControlContentVerticalAlignment // 默认控件内的内容竖直居中对齐
+    open var contentHorizontalAlignment: UIControlContentHorizontalAlignment // 默认控件内的内容水平居中对齐
+
+    open var state: UIControlState { get } // 可能处于多个状态 (e.g. disabled|selected). 
+
+    open var isTracking: Bool { get } // 是否正在追踪触控操作
+    open var isTouchInside: Bool { get } // 正在追踪触控操作时可用
+</code></pre>
+<h3 id="UIButton"><a href="#UIButton" class="headerlink" title="UIButton"></a>UIButton</h3><p>在用户交互时，用于执行你的自定义代码的控件。</p>
+<p>按钮有五个状态：default、highlighted、focused、selected、disabled。</p>
+<p>按钮组成：标题字符串、图片、背景图片。使用按钮的titleLabel、imageView、backgroundImage 属性操作。</p>
+<p>设置内容边距：可以用 titleEdgeInsets 设置标题 insets，用 imageEdgeInsets 设置图片的 insets，或者用 contentEdgeInsets 同时设置标题和图片的 insets。</p>
+<center><img src="/2018/05/21/222410/04_button.png"></center>
+
+<h3 id="UIDatePicker"><a href="#UIDatePicker" class="headerlink" title="UIDatePicker"></a>UIDatePicker</h3><p>用来输入日期和时间的控件。</p>
+<p>可以调整只显示日期或时间，按系统区域、时区进行本地化显示，限制最早或最晚的日期。</p>
+<center><img src="/2018/05/21/222410/05_datePicker.png"></center>
+
+<h3 id="UIPageControl"><a href="#UIPageControl" class="headerlink" title="UIPageControl"></a>UIPageControl</h3><p>在水平方向显示一组圆点，每一个点代表一个页面，可参考 iPhone自带的天气应用。</p>
+<p>可以设置页数，当前页，颜色等配置。</p>
+<center><img src="/2018/05/21/222410/06_pagecontrol.jpg"></center>
+
+<h3 id="UISegmentedControl"><a href="#UISegmentedControl" class="headerlink" title="UISegmentedControl"></a>UISegmentedControl</h3><p>一个有多段组成的水平控件，每一段相当于一个独立按钮。</p>
+<p>分段控件可以显示标题、图片。</p>
+<center><img src="/2018/05/21/222410/07_segmentedcontrol.jpg"></center>
+
+<h3 id="UISlider"><a href="#UISlider" class="headerlink" title="UISlider"></a>UISlider</h3><p>用于从一个连续的范围值中选取一个值。</p>
+<p>可以用文字、图片设置滑动控件的范围（最大、最小），设置滑块大小和颜色、是否监听值的连续改变。</p>
+<center><img src="/2018/05/21/222410/08_slider.png"></center>
+
+<h3 id="UIStepper"><a href="#UIStepper" class="headerlink" title="UIStepper"></a>UIStepper</h3><p>用于增加或减少一个值。</p>
+<p>可以设置最大值、最小值、每一次增加值的大小、设置控件不同状态的颜色、背景图片。</p>
+<center><img src="/2018/05/21/222410/09_stepper.jpg"></center>
+
+<h3 id="UISwitch"><a href="#UISwitch" class="headerlink" title="UISwitch"></a>UISwitch</h3><p>用于提供二选一的选项。</p>
+<p>可以设置开关颜色、开和关状态的图片、填充颜色。</p>
+<center><img src="/2018/05/21/222410/10_switch.png"></center>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' == true;
+    var verify = 'false' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "jd3RjdaYyr3Mg6wIlEgkkP7Q-gzGzoHsz",
+        appKey: "Mn0YV0jrhVHDnR2hn2fKlGYU",
+        placeholder: "Say something...",
+        pageSize:'10',
+        avatar:'monsterid',
+        lang:'zh-cn'
+    });
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/05/17/205301/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="Ronan's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        ronansparks@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: ronansparks@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">6</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/产品策划/">产品策划<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/市场营销/">市场营销<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/思维科学/">思维科学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/科技人文/">科技人文<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/程序开发/">程序开发<span class="sidebar_archives-count">5</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">cloud_circle</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+        <a href="https://www.instagram.com/ronansparks/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-instagram">
+                <span class="visuallyhidden">Instagram</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/ronansparks" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+        <a href="https://www.linkedin.com/in/ronan-bai-abb79b119/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-linkedin">
+                <span class="visuallyhidden">LinkedIn</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>野猫君の窝
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize('jd3RjdaYyr3Mg6wIlEgkkP7Q-gzGzoHsz', 'Mn0YV0jrhVHDnR2hn2fKlGYU');
+    </script>
+    <script type="text/ls-javascript" id="leancloud-views-script">
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
+
+
+
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
