@@ -3,6 +3,37 @@
   
     
     <entry>
+      <title>开发者视角看WWDC 2018 Keynote</title>
+      <link href="/2018/06/06/121727/"/>
+      <url>/2018/06/06/121727/</url>
+      <content type="html"><![CDATA[<p>又到了每年一次的苹果开发者大会，今年没有发布任何硬件产品，只是对四大平台（iOS，watchOS，tvOS，macOS）进行了更新。</p><p>野猫君将带你从开发者视角看完这场发布会，如何提前储备技能，为下一个机会做准备。</p><img src="/2018/06/06/121727/00.jpg"><h1 id="版本-设备兼容"><a href="#版本-设备兼容" class="headerlink" title="版本/设备兼容"></a>版本/设备兼容</h1><p>现有的系统版本 iOS 11已经覆盖了 81% 的苹果设备，iOS 10 覆盖了 14%，两个版本加起来覆盖了 95%的设备（数据来源于发布会公布的数据和 <a href="https://developer.apple.com/support/app-store/" target="_blank" rel="noopener">开发者官网</a>）。因此开发的时候，支持新功能还是兼容旧版本，可以结合自家业务来做决定。</p><p>iOS 12 将支持 2013 以来到现在的所有 iPhone、iPad，最早的是 iPhone 5s、iPad mini 二代、iPad Air 一代，开发的时候，还要考虑如何兼容这些设备。</p><p>新版本调整了 CPU 的策略，将在打开应用的瞬间提高 CPU，然后缓降，这样换来的效果是（以 6 plus 为测试对象）：</p><ul><li>邮件应用启动速度提高 40%</li><li>键盘弹出完成速度提高 50%</li><li>相机打开速度提高 70%</li><li>系统分享框弹出速度提高到 2 倍</li><li>应用启动速度提高到 2 倍</li></ul><img src="/2018/06/06/121727/01.png"><h1 id="iOS-12"><a href="#iOS-12" class="headerlink" title="iOS 12"></a>iOS 12</h1><h2 id="AR-相关"><a href="#AR-相关" class="headerlink" title="AR 相关"></a>AR 相关</h2><p>联合皮克斯工作室推出了名为 <strong>USDZ</strong> 的新格式，专用于存储 AR 图像，可以通过 iMessage、邮件、网络传播。</p><p>发布了 <strong>ARKit 2.0</strong>，主要提升了面部追踪、真实感渲染、3D 物品检测、持久化的体验（可存储）、共享体验（多玩家联机）。最后一点，无疑增加了更多的趣味性和黏性。现场演示了基于乐高积木的 AR 多玩家游戏。</p><p>系统将自带 <strong>Measure</strong> 应用，用于测量长度、矩形宽高。App Store 里现有的 AR 测量应用将洗牌。</p><p><strong>开发者看点：</strong>现阶段苹果在推出各种 AR 工具，赋能给开发者；随后可能会大量应用在游戏、教育、生活中。作为开发者，要尽快储备技能，顺势而为，坐上风口。</p><img src="/2018/06/06/121727/02.png"><h2 id="Siri"><a href="#Siri" class="headerlink" title="Siri"></a>Siri</h2><p>新增 <strong>Shortcuts</strong> 应用，将于秋季推出。你可以自定义事件名称和一连串的操作，使用的时候告诉 Siri，这些事件便会依次执行。如果你用过 Workflow，那你应该很熟悉这些操作，没错，这正是基于去年苹果收购的 Workflow。</p><p>不过你现在也可以尝鲜：首先启动一次地图、电话、备忘录、浏览器等，接着就可以在 Siri 设置中自定义。不过野猫君还没有探索出怎样把它玩出花儿来。</p><p><strong>开发者看点：</strong>可以看做是增强版的语音入口，苹果开放了能力，剩下的就是开发者们自己去争夺用户入口。</p><img src="/2018/06/06/121727/03.png"><h2 id="隐私保护"><a href="#隐私保护" class="headerlink" title="隐私保护"></a>隐私保护</h2><p>勿扰模式：开启勿扰模式后，推送通知将不会出现在锁屏页面。</p><p>通知中心：新版本可以分组显示推送通知；可以在锁屏页面快捷关闭应用的通知；Siri 会建议用户关闭很少使用、却经常推送的应用。</p><p><strong>开发者看点：</strong>推送通知不要骚扰用户，不然用户顺手就把你关进小黑屋。</p><img src="/2018/06/06/121727/04.png"><h2 id="新增特性"><a href="#新增特性" class="headerlink" title="新增特性"></a>新增特性</h2><p>图片应用：新增了基于 AI 的图片搜索，可搜索类别、标签、人物、地点，识别出照片中的好友并建议分享给他们。</p><p>屏幕时长监控：每周会生成报告，关于各应用、夜间使用频率、哪款应用诱导你解锁屏幕的次数多。</p><p>Animoji &amp; Memoji：Animoji 新增舌头👅识别，新增几个新的👻、🐨、🐅。Memoji是什么呢？就是定义你自己的角色（发型、面部、装饰等）。</p><p>FaceTime：支持群组视频通话，最多 32 个人。</p><img src="/2018/06/06/121727/05.png"><h1 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h1><p>iOS 会和 macOS 融合吗？</p><p>官方回答不会；长期，还是有可能。</p><p>新系统中加入了<strong>UIKit</strong>，目前从 iOS 那边移植了“新闻”、“股票”等几款应用。不过等到 2019 才会向开发者开放移植功能。</p><img src="/2018/06/06/121727/06.png"><p>新增夜间模式，Xcode 也新增了夜间模式，非常好看。</p><img src="/2018/06/06/121727/07.png"><p>新增桌面一键整理功能。</p><img src="/2018/06/06/121727/08.jpg"><p>新增截屏后标注功能，和现在 iPhone 上的截屏一样。</p><p>新增从电脑上的应用中唤起手机摄像头，在手机拍摄 / 扫描后，回传给电脑上的应用。</p><p>新增对位置、联系人、摄像头、麦克风的权限，应用要用到这些功能，需要先申请。</p><img src="/2018/06/06/121727/09.png"><p>改进后的 Finder 支持 pdf + image 一键合成 PDF。</p><p>改进后的预览功能，可以添加标注、裁剪视频、宣传图片。</p><p>改进后 Safari 隐藏了 Facebook 这类在网页中的评论 / 喜欢插件，防止用户被广告追踪。</p><p>改版后的 App Store 好看了很多，苹果很可能重新重视这方面的建设。</p><img src="/2018/06/06/121727/10.png"><p><strong>开发者看点：</strong> </p><ul><li>黑化版的 Xcode 方便你加班到半夜也不刺眼 :D。</li><li>电脑与手机的无缝调用应用的功能。</li><li>Mac 应用的权限申请需要注意。</li><li>Mac 应用的开发可能将迎来一个小高潮。</li></ul><h1 id="watchOS"><a href="#watchOS" class="headerlink" title="watchOS"></a>watchOS</h1><p>健康与健身：支持好友间比赛（类似于 <strong>微信步数</strong> ）</p><p>连接：支持对讲机、Shortcuts、浏览网页、播放 Podcasts</p><h1 id="tvOS"><a href="#tvOS" class="headerlink" title="tvOS"></a>tvOS</h1><p>支持 4K HDR；支持杜比音效（DOLBY ATMOS）</p>]]></content>
+      
+      <categories>
+          
+          <category> 程序开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> iOS </tag>
+            
+            <tag> wwdc 2018 </tag>
+            
+            <tag> macOS </tag>
+            
+            <tag> AR </tag>
+            
+            <tag> Siri </tag>
+            
+            <tag> 开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>详解UIView之容器视图与控件</title>
       <link href="/2018/05/21/222410/"/>
       <url>/2018/05/21/222410/</url>
@@ -19,13 +50,13 @@
             
             <tag> iOS </tag>
             
-            <tag> UIView </tag>
-            
             <tag> UIKit </tag>
+            
+            <tag> UIScrollView </tag>
             
             <tag> UIControl </tag>
             
-            <tag> UIScrollView </tag>
+            <tag> UIView </tag>
             
         </tags>
       
@@ -334,11 +365,11 @@
       
         <tags>
             
+            <tag> iOS </tag>
+            
             <tag> 开发者账号 </tag>
             
             <tag> App Store </tag>
-            
-            <tag> iOS </tag>
             
         </tags>
       
