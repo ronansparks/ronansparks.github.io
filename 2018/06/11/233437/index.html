@@ -45,7 +45,7 @@
     
     <title>
         
-            标签: keyframe | 
+            详解 SnapKit 布局 | 
         
         野猫君の窝
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Be humble">
-    <meta name="keywords" content="iOS Development Design Product Life">
+    <meta name="keywords" content="iOS Development Design Product Life,iOS,SnapKit,布局">
     <meta name="theme-color" content="#0abab5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -83,6 +83,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -219,7 +222,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="野猫君の窝">
-    <meta name="msapplication-starturl" content="ronansparks.github.io/tags/keyframe/">
+    <meta name="msapplication-starturl" content="ronansparks.github.io/2018/06/11/233437/">
     <meta name="msapplication-navbutton-color" content="#0abab5">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="野猫君の窝">
@@ -234,13 +237,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="ronansparks.github.io/tags/keyframe/">
+    <meta property="og:url" content="ronansparks.github.io/2018/06/11/233437/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: keyframe | 野猫君の窝">
+    <meta property="og:title" content="详解 SnapKit 布局 | 野猫君の窝">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Be humble">
-    
+    <meta property="og:article:tag" content="iOS"> <meta property="og:article:tag" content="SnapKit"> <meta property="og:article:tag" content="布局"> 
 
+    
+        <meta property="article:published_time" content="Mon Jun 11 2018 23:34:37 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jun 12 2018 10:47:16 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -248,13 +254,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="ronansparks.github.io/tags/keyframe/index.html" />
+        <link rel="canonical" href="ronansparks.github.io/2018/06/11/233437/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "ronansparks.github.io/2018/06/11/233437/index.html",
+    "headline": "详解 SnapKit 布局",
+    "datePublished": "Mon Jun 11 2018 23:34:37 GMT+0800",
+    "dateModified": "Tue Jun 12 2018 10:47:16 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Ronan",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "How do you do"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "野猫君の窝",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",iOS,SnapKit,布局iOS Development Design Product Life",
+    "description": "Be humble",
+}
+</script>
 
 
     
@@ -288,100 +324,466 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#约束参数"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">约束参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#布局灵活性"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">布局灵活性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#布局灵活"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">布局灵活</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优先级（priority）"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">优先级（priority）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组合"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">组合</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新约束"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">更新约束</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#调试"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">调试</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#其他资源"><span class="post-toc-number">2.</span> <span class="post-toc-text">其他资源</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 27 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/24/091143/">iOS动画之UIView动画</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言
-对于一个App，能完成基本功能，只能算及格。优秀的交互、视觉能够提升用户体验，够得上优秀。再加上细节、打动人心的动画，就更完美了。
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/24/091143/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Ronan's avatar">
-            </div>
-            <div>
-                <strong>Ronan</strong>
-                <span>4月 24, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info" style="margin: 0">
-          
-              <span class="post_entry-category" style="text-align: right; display:block;">
-                  <a class="post_category-link" href="/categories/程序开发/">程序开发</a>
-              </span>
-              <!-- <span class="post-count" style="color: #dbdbdb">字数统计: 765</span> -->
-              <span class="post-count" style="color: #ababab;">阅读时长：4分钟</span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 27 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                详解 SnapKit 布局
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Ronan</strong>
+        <span>6月 11, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/SnapKit/">SnapKit</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/iOS/">iOS</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/布局/">布局</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2018/06/11/233437/" class="leancloud-views_num" data-flag-title="详解 SnapKit 布局">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=详解 SnapKit 布局&url=ronansparks.github.io/2018/06/11/233437/index.html&pic=ronansparks.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=详解 SnapKit 布局&url=ronansparks.github.io/2018/06/11/233437/index.html&via=Ronan" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=ronansparks.github.io/2018/06/11/233437/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=ronansparks.github.io/2018/06/11/233437/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>SnapKit 是一门在 iOS 和 OS X 上的的领域特定语言（Domain Specific Language），简化自动布局，使用 Swift 语言编写。它有以下几点特征：</p>
+<ul>
+<li>简单 &amp; 表示清晰：DSL 链可以使用很少的代码添加约束，并保持易读、易理解。</li>
+<li>类型安全：通过设计，减少了人为错误、且避免无效的约束被创建。</li>
+<li>兼容性：iOS 和 OS X 平台可用，可使用 Cocoapods 和 Carthage 安装。</li>
+<li>免费：MIT 开源许可。</li>
+</ul>
+<p>当前版本是 4.0，使用 <code>pod &#39;SnapKit&#39;, &#39;~&gt; 4.0&#39;</code> ，最新版本和其他安装方式可上 <a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="noopener">Github</a> 查看。</p>
+<p>还可以下载查看 <a href="https://github.com/ronansparks/SnapKitDemo.git" target="_blank" rel="noopener">SnapKitDemo</a>，简单写了几个示例。</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>新建 <code>SingleView</code> 工程，在 <code>viewDidLoad</code> 中添加下面方法。新建了一个橙色的 UIView，宽高都是 100，中心与 self.view 重合。</p>
+<pre><code class="swift">let box = UIView()
+box.backgroundColor = .orange
+view.addSubview(box)
+
+box.snp.makeConstraints { (make) in
+    make.size.equalTo(100)
+    make.center.equalTo(view)
+}
+</code></pre>
+<p><strong>注意：</strong>必须先把要布局的视图添加到父容器中，再调用布局，否则会崩溃。</p>
+<h2 id="约束参数"><a href="#约束参数" class="headerlink" title="约束参数"></a>约束参数</h2><ul>
+<li><code>.equalTo</code> 相等</li>
+<li><code>.lessThanOrEqualTo</code> 小于等于</li>
+<li><code>.greaterThanOrEqualTo</code> 大于等于</li>
+</ul>
+<p><code>&lt;=</code> 和 <code>&gt;=</code> 基本都可以使用 <code>=</code> 代替；同时设置 <code>&lt;=</code> 和 <code>&gt;=</code>，结果以 <code>&gt;=</code> 为准；</p>
+<p>这三种约束都接受一个参数，支持下面三种参数</p>
+<ol>
+<li>视图属性参数</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>ViewAttribute</th>
+<th>NSLayoutAttribute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>view.snp.left</td>
+<td>NSLayoutAttribute.left</td>
+</tr>
+<tr>
+<td>view.snp.right</td>
+<td>NSLayoutAttribute.right</td>
+</tr>
+<tr>
+<td>view.snp.top</td>
+<td>NSLayoutAttribute.top</td>
+</tr>
+<tr>
+<td>view.snp.bottom</td>
+<td>NSLayoutAttribute.bottom</td>
+</tr>
+<tr>
+<td>view.snp.leading</td>
+<td>NSLayoutAttribute.leading</td>
+</tr>
+<tr>
+<td>view.snp.trailing</td>
+<td>NSLayoutAttribute.trailing</td>
+</tr>
+<tr>
+<td>view.snp.width</td>
+<td>NSLayoutAttribute.width</td>
+</tr>
+<tr>
+<td>view.snp.height</td>
+<td>NSLayoutAttribute.height</td>
+</tr>
+<tr>
+<td>view.snp.centerX</td>
+<td>NSLayoutAttribute.centerX</td>
+</tr>
+<tr>
+<td>view.snp.centerY</td>
+<td>NSLayoutAttribute.centerY</td>
+</tr>
+<tr>
+<td>view.snp.lastBaseline</td>
+<td>NSLayoutAttribute.lastBaseline</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="swift">// 设置当前视图宽度等于 view1 的宽度
+make.width.equalTo(view1.snp.width)
+</code></pre>
+<ol start="2">
+<li>视图参数</li>
+</ol>
+<pre><code class="swift">// 使当前视图的中心 x 坐标等于 view1 的中心 x 坐标
+make.centerX.equalTo(view1)
+
+// 等同于 
+// make.centerX.equalTo(view1.snp.centerX)
+</code></pre>
+<ol start="3">
+<li>严格检测参数（常量值）</li>
+</ol>
+<pre><code class="swift">// 设置当前视图宽度为 100，距顶部 40
+make.width.equalTo(100)
+make.top.equalTo(40)
+</code></pre>
+<h2 id="布局灵活性"><a href="#布局灵活性" class="headerlink" title="布局灵活性"></a>布局灵活性</h2><h3 id="布局灵活"><a href="#布局灵活" class="headerlink" title="布局灵活"></a>布局灵活</h3><p>如果宽、高相等，下面几种方式都一样</p>
+<pre><code class="swift">// 1 
+//make.width.equalTo(100)
+//make.height.equalTo(100)
+
+// 2 使用串联写法
+//make.width.height.equalTo(100)
+
+// 3(推荐写法)
+make.size.equalTo(100)
+</code></pre>
+<p>视图左边位置在 view1 左边 + 10，三种方式都一样</p>
+<pre><code class="swift">// 1
+//make.left.equalToSuperView().offset(10)
+
+// 2
+make.left.equalTo(10)
+
+// 3
+//make.left.equalTo(view1.snp.left).offset(10)
+</code></pre>
+<h3 id="优先级（priority）"><a href="#优先级（priority）" class="headerlink" title="优先级（priority）"></a>优先级（priority）</h3><pre><code class="swift">make.top.equalTo(label.snp.top).priority(600)
+
+// 快捷方式：.low, .medium, .high, .required，数值分别为 250, 501, 750, 1000
+make.top.equalTo(label.snp.top).priority(.medium)
+</code></pre>
+<p><strong>注意：</strong>优先级数值最高为 1000，超过会导致崩溃。</p>
+<h3 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h3><p><strong>edges</strong></p>
+<pre><code class="swift">// top, left, bottom, right 都等于 view1
+make.edges.equalTo(view1)
+
+// top = superview.top + 5
+// left = superview.left + 10
+// bottom = superview.bottom - 15
+// right = superview.right - 20
+make.edges.equalToSuperview().inset(UIEdgeInsets(top: 5, left: 10, bottom: 15, right: 20))
+</code></pre>
+<p><strong>size</strong></p>
+<pre><code class="swift">// width 和 height 大于等于 titleLabel
+make.size.greaterThanOrEqualTo(titleLabel)
+
+// width = superview.width + 100
+// height = superview.height + 100
+make.size.equalToSuperview().offset(100)
+</code></pre>
+<p><strong>center</strong></p>
+<pre><code class="swift">// centerX 和 centerY 分别等于 button1 的 centerX 和 centerY
+make.center.equalTo(button1)
+
+// centerX = superview.centerX + 5
+// centerY = superview.centerY + 5
+make.center.equalToSuperview().offset(5)
+</code></pre>
+<p><strong>链式</strong></p>
+<pre><code class="swift">// 顶部与 view1 顶部对齐，左、右、下与 superview 对齐
+make.left.right.bottom.equalToSuperview()
+make.top.equalTo(view1)
+</code></pre>
+<h2 id="更新约束"><a href="#更新约束" class="headerlink" title="更新约束"></a>更新约束</h2><ol>
+<li>引用</li>
+</ol>
+<pre><code class="swift">// 全局属性
+var topConstraint: Constraint? = nil
+
+// make 约束
+view1.snp.makeConstraints { make in
+    self.topConstraint = make.top.equalToSuperview().offset(40).constraint
+    make.left.bottom.right.equalToSuperview()
+}
+
+// 更新约束（比如按钮点击方法中）
+self.topConstraint.updateOffset(10)
+</code></pre>
+<ol start="2">
+<li>snp.updateConstraints</li>
+</ol>
+<pre><code class="swift">// Apple 建议在此方法中添加/更新约束
+override func updateConstraints() {
+    self.view2.snp.updateConstraints { make in
+        make.size.equalTo(200)
+    }
+
+   // 必须调用
+     super.updateConstraints()
+}
+</code></pre>
+<ol start="3">
+<li>snp.remakeConstraints</li>
+</ol>
+<p>与 <code>snp.makeConstraints</code> 相似，不过这个会先移除 SnapKit 为该视图添加的所有约束。</p>
+<ol start="4">
+<li>对齐 safeArea</li>
+</ol>
+<pre><code class="swift">view1.snp.makeConstraints { make in
+    if #available(iOS 11, *) {
+        make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+    } 
+    else {
+        make.top.equalTo(self.view.snp.top)
+    }
+}
+
+</code></pre>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p><code>.labeled</code> 可以打印输出该约束</p>
+<pre><code class="swift">button.snp.makeConstraints { (make) -&gt; Void in
+    make.top.equalTo(otherView).labeled(&quot;buttonViewTopConstraint&quot;)
+}
+</code></pre>
+<h1 id="其他资源"><a href="#其他资源" class="headerlink" title="其他资源"></a>其他资源</h1><p>建议也查看下面几篇文章，以便加深理解。</p>
+<p><a href="http://snapkit.io/docs/" target="_blank" rel="noopener">SnapKit 官方文档</a></p>
+<p><a href="https://www.jianshu.com/p/2bad53a2a180" target="_blank" rel="noopener">langkee 简书</a></p>
+<p><a href="http://www.hangge.com/blog/cache/detail_1097.html" target="_blank" rel="noopener">航哥</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' == true;
+    var verify = 'false' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "jd3RjdaYyr3Mg6wIlEgkkP7Q-gzGzoHsz",
+        appKey: "Mn0YV0jrhVHDnR2hn2fKlGYU",
+        placeholder: "Say something...",
+        pageSize:'10',
+        avatar:'monsterid',
+        lang:'zh-cn'
+    });
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/06/06/121727/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -553,6 +955,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
@@ -789,6 +1199,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -801,6 +1215,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
