@@ -246,7 +246,7 @@
 
     
         <meta property="article:published_time" content="Thu Jun 14 2018 23:29:28 GMT+0800">
-        <meta property="article:modified_time" content="Fri Jun 15 2018 16:23:53 GMT+0800">
+        <meta property="article:modified_time" content="Fri Jun 15 2018 16:40:14 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -269,7 +269,7 @@
     "mainEntityOfPage": "ronansparks.github.io/2018/06/14/232928/index.html",
     "headline": "Swift 面向协议编程",
     "datePublished": "Thu Jun 14 2018 23:29:28 GMT+0800",
-    "dateModified": "Fri Jun 15 2018 16:23:53 GMT+0800",
+    "dateModified": "Fri Jun 15 2018 16:40:14 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Ronan",
@@ -353,7 +353,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#面向对象"><span class="post-toc-number">1.</span> <span class="post-toc-text">面向对象</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#面向协议"><span class="post-toc-number">2.</span> <span class="post-toc-text">面向协议</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#综述"><span class="post-toc-number">3.</span> <span class="post-toc-text">综述</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#面向对象"><span class="post-toc-number">1.</span> <span class="post-toc-text">面向对象</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#面向协议"><span class="post-toc-number">2.</span> <span class="post-toc-text">面向协议</span></a></li></ol>
     </ul>
     
 
@@ -516,6 +516,7 @@
 <p>— <a href="https://developer.apple.com/videos/play/wwdc2015/408/" target="_blank" rel="noopener">WWDC 2015</a></p>
 </blockquote>
 <p>Swift 2 引入了协议扩展，提出了面向协议编程的概念。这场是由 Dave Abrahams （Swift 标准库的负责人）演讲的，列举了 OOP 的问题，以及如何通过 POP 解决这些问题，建议去看看（PS：他的肢体语言、冷笑话风格和《硅谷》里的 Richard 很像 :D）。</p>
+<img src="/2018/06/14/232928/01_thumb.jpg">
 <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><p>在面向对象的世界的里，以类为思考方式，每个类有自己的属性和方法。</p>
 <p>工作忙碌一天后回到家，你把温度器打开，设置到 27 度</p>
 <pre><code class="swift">// 温度控制器
@@ -556,6 +557,7 @@ print(&quot;烤箱温度：\(oven.thermometer!.temperature)&quot;)
 烤箱温度：200
 </code></pre>
 <p>使用结构（Struct）可以解决引用问题，更多内容链接文章末尾。首选结构体，只有确定需要用到类的特性时，才使用类。</p>
+<img src="/2018/06/14/232928/02_POP.png">
 <h1 id="面向协议"><a href="#面向协议" class="headerlink" title="面向协议"></a>面向协议</h1><p>协议中包含属性和待实现的方法定义。</p>
 <p>协议/接口一点也不稀奇，Objective-C、Java都有。声明协议/接口，让具体的子类去实现。</p>
 <p>如果你有多个类继承了这个协议，还需要在每个类中写一遍。有经验的你，一定会想办法避免在多个地方写相同的代码。</p>
@@ -588,9 +590,12 @@ myCircle.drawLine(start: CGPoint(x: 0, y: 0), end: 5)
 // Draw a circle from the center: (0.0, 0.0), radius: 10.0
 // Draw a line from (0.0, 0.0) to 5.0
 </code></pre>
-<h1 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h1><p>优先考虑协议，而不是父类。</p>
-<p>优先考虑值类型，而不是类。</p>
-<p>协议扩展具有超能力。</p>
+<p>从面向对象编程转换到面向协议编程，要注意的几点：</p>
+<ul>
+<li>优先考虑协议，而不是父类。</li>
+<li>优先考虑值类型，而不是类。</li>
+<li>善用协议扩展的超能力。</li>
+</ul>
 <p>更多链接：</p>
 <ul>
 <li><a href="https://developer.apple.com/videos/play/wwdc2015/408/" target="_blank" rel="noopener">使用 Swift 面向协议编程 - WWDC 2015 视频</a></li>
