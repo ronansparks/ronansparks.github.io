@@ -3,33 +3,6 @@
   
     
     <entry>
-      <title>面试经典之初级算法（一）</title>
-      <link href="/2018/06/18/234916/"/>
-      <url>/2018/06/18/234916/</url>
-      <content type="html"><![CDATA[<p>算法都忘光了？快来补补吧。（iOS / Android / 前端 没人要啦 :D）</p><a id="more"></a><blockquote><p><strong>算法题目和算法实现来源？</strong></p><p>题目和最佳算法实现来自 <a href="https://leetcode-cn.com" target="_blank" rel="noopener">LeetCode 中国</a>；作为反面教材对比的实现来自野猫君本猫🐈。</p><p><strong>为什么写这个系列？</strong></p><p>记录个人的思考过程，分析差距，查漏补缺。“面试经典“，这个叫法来自 LeetCode 的数据统计，说明这些算法是各公司比较在意的，较为常用的。根据二八定律，优先学习常用的算法，可以解决大部分的问题。</p><p><strong>本系列一共有多少篇？</strong></p><p>《初级算法》系列预估7篇，共49道题，包含数组、字符串、动态规划等多种类别。倒数第二篇会告知具体的总篇数，如果没有看到，那就说明离收尾还早呢。</p></blockquote><p>那么，这就开始吧！</p><h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="只出现一次的数字"><a href="#只出现一次的数字" class="headerlink" title="只出现一次的数字"></a>只出现一次的数字</h2><p><strong>标签：</strong> 位运算、哈希表</p><p><strong>题目：</strong></p><blockquote><p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p><p><strong>说明：</strong></p><p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p></blockquote><p><strong>示例 1:</strong></p><pre><code>输入: [2,2,1]输出: 1</code></pre><p><strong>示例 2:</strong></p><pre><code>输入: [4,1,2,1,2]输出: 4</code></pre><p><strong>个人实现：</strong> 耗时24 ms，战胜95.83%的提交记录</p><pre><code class="swift">class Solution {    func singleNumber(_ nums: [Int]) -&gt; Int {        if nums.count == 0 { return 0 }        var single = 0        for num in nums {            single ^= num        }        return single    }}</code></pre><p><strong>最佳实现：</strong> 耗时 20 ms</p><pre><code class="swift">class Solution {    func singleNumber(_ nums: [Int]) -&gt; Int {        var num = nums.first!        for i in 1..&lt;nums.count {            num = num ^ nums[i]        }        return num    }}</code></pre><p><strong>对比：</strong></p><p>+1：我首先进行了数组边界检测，而他直接使用<code>var num = nums.first!</code>强制解析，当传入空数组时，会崩溃。</p><p>-1：因为他事先把数组第一个值赋值给了变量，他的遍历比我少遍历一个，耗时短。</p><p>使用他的实现，并加入我的数组边界检测，最终结果为 16ms，竟然超越了他，😂随机性误差？</p><p><strong>解析：</strong> 使用位运算符中的<strong>按位异或运算符</strong> <code>^</code> 比较两个数，返回一个数。用二进制表示，如果两个数的同一位相同，则该位输出0，即两个相同的数，二进制相同，最终会抵消为0，剩下的则为那个出现了一次的元素。</p><img src="/2018/06/18/234916/01.png">]]></content>
-      
-      <categories>
-          
-          <category> 程序开发 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数组 </tag>
-            
-            <tag> 简单 </tag>
-            
-            <tag> 算法 </tag>
-            
-            <tag> 面试 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Swift 面向协议编程</title>
       <link href="/2018/06/14/232928/"/>
       <url>/2018/06/14/232928/</url>
@@ -179,11 +152,11 @@
       
         <tags>
             
-            <tag> 产品 </tag>
-            
             <tag> 用户体验 </tag>
             
             <tag> 产品设计 </tag>
+            
+            <tag> 产品 </tag>
             
             <tag> 战略层 </tag>
             
@@ -278,9 +251,9 @@
       
         <tags>
             
-            <tag> 产品 </tag>
-            
             <tag> 用户体验 </tag>
+            
+            <tag> 产品 </tag>
             
             <tag> 创意 </tag>
             
@@ -363,13 +336,13 @@
       
         <tags>
             
+            <tag> 产品 </tag>
+            
             <tag> 需求 </tag>
             
             <tag> 马斯洛 </tag>
             
             <tag> 需求层次 </tag>
-            
-            <tag> 产品 </tag>
             
         </tags>
       
