@@ -3,6 +3,37 @@
   
     
     <entry>
+      <title>如何让百度抓取hexo文章</title>
+      <link href="/2018/06/25/092108/"/>
+      <url>/2018/06/25/092108/</url>
+      <content type="html"><![CDATA[<blockquote><p>没有人看到的，没有意义</p></blockquote><p>检查是否有抓取</p><p>site: xxxxx.com</p><p><a href="https://ziyuan.baidu.com/?castk=LTE%3D" target="_blank" rel="noopener">https://ziyuan.baidu.com/?castk=LTE%3D</a></p><p>用户中心 - 站点管理 - 添加网站</p>]]></content>
+      
+      <categories>
+          
+          <category> 开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> gitpage </tag>
+            
+            <tag> 索引 </tag>
+            
+            <tag> 爬虫 </tag>
+            
+            <tag> 百度 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>产品《启示录》笔记</title>
       <link href="/2018/06/24/105712/"/>
       <url>/2018/06/24/105712/</url>
@@ -75,11 +106,11 @@
       
         <tags>
             
+            <tag> iOS </tag>
+            
             <tag> Swift </tag>
             
             <tag> protocol </tag>
-            
-            <tag> iOS </tag>
             
         </tags>
       
@@ -158,13 +189,13 @@
             
             <tag> iOS </tag>
             
+            <tag> UIKit </tag>
+            
             <tag> UIScrollView </tag>
             
             <tag> UIControl </tag>
             
             <tag> UIView </tag>
-            
-            <tag> UIKit </tag>
             
         </tags>
       
