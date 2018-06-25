@@ -6,7 +6,7 @@
       <title>如何让百度抓取hexo文章</title>
       <link href="/2018/06/25/092108/"/>
       <url>/2018/06/25/092108/</url>
-      <content type="html"><![CDATA[<blockquote><p>没有人看到的，没有意义</p></blockquote><p>检查是否有抓取</p><p>site: xxxxx.com</p><p><a href="https://ziyuan.baidu.com/?castk=LTE%3D" target="_blank" rel="noopener">https://ziyuan.baidu.com/?castk=LTE%3D</a></p><p>用户中心 - 站点管理 - 添加网站</p><p>HTML 标签验证</p><p>/Users/Ronan/Documents/Blog/themes/material/layout/_partial</p>]]></content>
+      <content type="html"><![CDATA[<blockquote><p>没有人看到的，没有意义</p></blockquote><p>检查是否有抓取</p><p>site: xxxxx.com</p><p><a href="https://ziyuan.baidu.com/?castk=LTE%3D" target="_blank" rel="noopener">https://ziyuan.baidu.com/?castk=LTE%3D</a></p><p>用户中心 - 站点管理 - 添加网站</p><p>HTML 标签验证。不行，因为github 返回403</p><p>/Users/Ronan/Documents/Blog/themes/material/layout/_partial</p>]]></content>
       
       <categories>
           
